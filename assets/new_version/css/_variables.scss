@@ -1,0 +1,25 @@
+// Color
+$white: #ffffff;
+// Navy
+$navy: #2D4A81;
+$lighter-navy: #00549F;
+$dark-navy: #003B6F;
+$darker-navy: #003A6E;
+$darkest-navy: #002A50;
+//
+$blue: #006FD1;
+$gold: #C09451;
+$darker-gold: #A4752F;
+$red: #E60202;
+//
+$lighter-grey: #F2F7FC;
+$light-grey: #E5EDF5;
+$grey: #BED4EA;
+$strong-grey: #8FA7BE;
+
+// Rounded
+$rounded: 4px;
+
+// Box Shadow Lift
+$box-shadow-lift: 0 1rem 2.5rem fade-out($darker-navy, .9), 0 .5rem 1rem -.75rem fade-out($darker-navy, .9) !default;
+$box-shadow-lift-lg: 0 2rem 5rem fade-out($darker-navy, .9), 0 .5rem 1rem -.75rem fade-out($darker-navy, .95) !default;

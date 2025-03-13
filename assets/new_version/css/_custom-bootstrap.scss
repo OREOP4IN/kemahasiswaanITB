@@ -1,0 +1,205 @@
+// Text Color
+.text-primary {
+    color: $blue!important;
+}
+.text-dark {
+    color: $darker-navy!important;
+}
+.text-muted {
+    color: $strong-grey!important;
+}
+// Text Size
+.text-sm {
+    font-size: 14px!important;
+    line-height: 1.4!important;
+}
+a {
+    color: $dark-navy;
+    &:hover {
+        color: $darker-navy;
+    }
+}
+// Background
+.bg-primary {
+    background-color: $navy!important;
+}
+// Font Weight
+.font-weight-bold {
+    font-weight: 500!important;
+}
+.font-weight-normal {
+    font-weight: 400!important;
+}
+//Button
+.btn {
+    font-weight: 500;
+    &:focus, &:active {
+        box-shadow: none!important;
+        outline: none!important;
+    }
+    &.btn-primary {
+        background: $dark-navy;
+        border-color: $dark-navy;
+        &:focus, &:active, &:hover {
+            background: $darkest-navy!important;
+            border-color: $darkest-navy!important;
+            outline: none!important;
+        }
+    }
+    &.btn-outline-primary {
+        background: transparent;
+        color: $dark-navy;
+        border-color: $dark-navy;
+        &:focus, &:active, &:hover {
+            background: $darkest-navy!important;
+            border-color: $darkest-navy!important;
+            color: $white!important;
+            outline: none!important;
+        }
+    }
+    &.btn-gold {
+        background: $gold;
+        border-color: $gold;
+        color: $white;
+        &:focus, &:active, &:hover {
+            background: $darker-gold!important;
+            border-color: $darker-gold!important;
+            outline: none!important;
+        }
+    }
+    &.btn-link {
+        color: $gold;
+    }
+    &.btn-light {
+        color: $dark-navy!important;
+    }
+}
+// Card
+a {
+    &.card {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+.card-border-bottom {
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $grey;
+    }
+    &:after {
+        width: 0%;
+        background-color: $gold;
+        transition: all .25s ease, transform .25s ease;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+.card-images {
+    background-color: $light-grey;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    padding-top: 60%;
+}
+
+// Page Link
+.page-link {
+    color: $navy;
+    font-weight: 500;
+    font-size: .87rem;
+    &:hover {
+        background-color: $light-grey;
+    }
+}
+.page-item {
+    &.active {
+        .page-link {
+            background-color: $navy;
+            border-color: $navy;
+        }
+    }
+}
+
+.collapse-block {
+    .btn {
+        position: relative;
+        z-index: 99;
+    }
+}
+
+.card-collapse {
+    border-top: 0!important;
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+    margin-top: -4px;
+}
+
+// Form
+.form-control::placeholder {
+    color: $dark-navy;
+    opacity: .5;
+}
+.form-control {
+    color: $darker-navy!important;
+    border-color: $grey;
+}
+
+// Breadcrumb
+.breadcrumb-item.active {
+    color: $lighter-navy;
+    opacity: .8;
+}
+
+// Table
+.table {
+    color: $darker-navy;
+}
+.table-bordered {
+    border-color: $grey;
+}
+.table .thead-light th {
+    background-color: $light-grey;
+    border-color: $grey;
+    color: $darker-navy;
+}
+.table-hover tbody tr:hover {
+    background-color: $lighter-grey;
+    color: $darker-navy;
+}
+.table-bordered td, .table-bordered th {
+    border-color: $grey;
+}
+
+// Pagination
+.page-item.disabled .page-link {
+    color: $lighter-navy;
+    opacity: .8;
+}
+
+// Collapse
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+
+.border-bottom,
+.border-top,
+.border-right,
+.border-left {
+    border-color: $grey!important;
+}

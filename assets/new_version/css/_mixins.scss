@@ -1,0 +1,19 @@
+@mixin block-100() {
+    display: block;
+    width: 100%;
+}
+
+@mixin full-background() {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $light-grey;
+}
+
+@mixin full-absolute($full-absolute) {
+    position: absolute;
+    top: $full-absolute;
+    left: $full-absolute;
+    bottom: $full-absolute;
+    right: $full-absolute;
+}

@@ -1,0 +1,8 @@
+# Ignore node_modules in a11y-tooling folder
+/a11y-tooling/node_modules/
+
+# Other typical ignores
+npm-debug.log*
+.env
+.vscode/
+.idea/

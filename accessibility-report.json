@@ -1,0 +1,597 @@
+{
+  "total": 5,
+  "passes": 0,
+  "errors": 58,
+  "results": {
+    "http://kemahasiswaan.itb/": [
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Duplicate id attribute value \"menus_no\" found on the web page.",
+        "context": "<a href=\"https://www.itb.ac.id/alumni\" id=\"menus_no\" class=\"extra-menu--item\">Alumni</a>",
+        "selector": "#menus_no",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Duplicate id attribute value \"menus_no\" found on the web page.",
+        "context": "<a href=\"https://www.itb.ac.id/mitra\" id=\"menus_no\" class=\"extra-menu--item\">Mitra</a>",
+        "selector": "#menus_no",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Duplicate id attribute value \"menus_no\" found on the web page.",
+        "context": "<a href=\"https://www.itb.ac.id/pengunjung\" id=\"menus_no\" class=\"extra-menu--item\">Pengunjung</a>",
+        "selector": "#menus_no",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Duplicate id attribute value \"menus_no\" found on the web page.",
+        "context": "<a href=\"https://www.itb.ac.id/pers\" id=\"menus_no\" class=\"extra-menu--item\">Pers</a>",
+        "selector": "#menus_no",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4:1. Recommendation:  change background to #e00.",
+        "context": "<a href=\"https://www.itb.ac.id/covid19\" class=\"extra-menu--item covid19\">COVID 19</a>",
+        "selector": "html > body > div:nth-child(2) > div > div:nth-child(2) > a:nth-child(7)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Duplicate id attribute value \"menus_no\" found on the web page.",
+        "context": "<a href=\"https://www.itb.ac.id/contact\" id=\"menus_no\" class=\"extra-menu--item\"><i class=\"icofont icofont-ui-me...</a>",
+        "selector": "#menus_no",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Duplicate id attribute value \"menus_no\" found on the web page.",
+        "context": "<a href=\"https://www.itb.ac.id/search\" id=\"menus_no\" class=\"extra-menu--item\"><i class=\"icofont icofont-ui-se...</a>",
+        "selector": "#menus_no",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button type=\"button\" id=\"btnOpen\" class=\"btn-burger\"><div class=\"inner\"></div></button>",
+        "selector": "#btnOpen",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button type=\"button\" id=\"btnClose\" class=\"btn-close\"><div class=\"inner\"></div></button>",
+        "selector": "#btnClose",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/chevron-down.svg\" width=\"12\">",
+        "selector": "#mobileNavigation > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > button > div > div:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/chevron-down.svg\" width=\"12\">",
+        "selector": "#mobileNavigation > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > button > div > div:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/chevron-down.svg\" width=\"12\">",
+        "selector": "#mobileNavigation > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > button > div > div:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/chevron-down.svg\" width=\"12\">",
+        "selector": "#mobileNavigation > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > button > div > div:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button id=\"prevBanner\" class=\"prev-slider slick-arrow\" style=\"display: block;\"><img src=\"https://kemahasiswaan...</button>",
+        "selector": "#prevBanner",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"https://kemahasiswaan.itb.ac.id/assets/new_version/images/prev-arrow.svg\">",
+        "selector": "#prevBanner > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button id=\"nextBanner\" class=\"next-slider slick-arrow\" style=\"display: block;\"><img src=\"https://kemahasiswaan...</button>",
+        "selector": "#nextBanner",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"https://kemahasiswaan.itb.ac.id/assets/new_version/images/next-arrow.svg\">",
+        "selector": "#nextBanner > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-social-instagram.svg\">",
+        "selector": "html > body > div:nth-child(8) > div > div > a:nth-child(1) > div > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-social-whatsapp.svg\">",
+        "selector": "html > body > div:nth-child(8) > div > div > a:nth-child(2) > div > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-social-twitter.svg\">",
+        "selector": "html > body > div:nth-child(8) > div > div > a:nth-child(3) > div > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-social-line.svg\">",
+        "selector": "html > body > div:nth-child(8) > div > div > a:nth-child(4) > div > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-social-tiktok.svg\">",
+        "selector": "html > body > div:nth-child(8) > div > div > a:nth-child(5) > div > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-social-youtube.svg\">",
+        "selector": "html > body > div:nth-child(8) > div > div > a:nth-child(6) > div > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-social-facebook.svg\">",
+        "selector": "html > body > div:nth-child(8) > div > div > a:nth-child(7) > div > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-karir2.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(1) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-konseling2.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(2) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-beasiswa2.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(3) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-organisasi.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(4) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-pengabdian.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(5) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-prestasi.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(6) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-kegiatan.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(7) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan/assets/new_version/images/icon-tracer.svg\">",
+        "selector": "html > body > div:nth-child(9) > div > div > div > div > a:nth-child(8) > div:nth-child(1) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Center",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Presentational markup used that has become obsolete in HTML5.",
+        "context": "<center>\n        <div class=\"row\">\n    ...</center>",
+        "selector": "html > body > div:nth-child(11) > div > center",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.18:1. Recommendation:  change background to #6f777f.",
+        "context": "<h4 class=\"section-title\" style=\"color:white\">Video </h4>",
+        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > h4",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/_r8es9IiSyc\" allowfullscreen=\"\"></iframe>",
+        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(1) > iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/z7K-0CW0Ehg?si=GQNtYTPHw6174Wpk\" allowfullscreen=\"\"></iframe>",
+        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(2) > iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/C8yc-4VEkJo\" allowfullscreen=\"\"></iframe>",
+        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(3) > iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/1G0PL5YDYLc?si=hK3E67PbxvXxZe75?rel=0&amp;autoplay=1&amp;mute=1\" allowfullscreen=\"\"></iframe>",
+        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(4) > iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button id=\"prevQuotes\" class=\"prev-slider slick-arrow slick-hidden\" aria-disabled=\"true\" tabindex=\"-1\"><img src=\"http://localhost/kema...</button>",
+        "selector": "#prevQuotes",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan//assets/new_version/images/next-arrow-quotes.svg\">",
+        "selector": "#prevQuotes > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
+        "context": "<button id=\"nextQuotes\" class=\"next-slider slick-arrow slick-hidden\" aria-disabled=\"true\" tabindex=\"-1\"><img src=\"http://localhost/kema...</button>",
+        "selector": "#nextQuotes",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://localhost/kemahasiswaan//assets/new_version/images/prev-arrow-quotes.svg\">",
+        "selector": "#nextQuotes > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.31:1. Recommendation:  change text colour to #000509.",
+        "context": "<div class=\"d-block text-center small text-muted mb-2\">© Direktorat Kemahasiswaan Inst...</div>",
+        "selector": "#footweb > div:nth-child(2) > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.57:1. Recommendation:  change text colour to #090600.",
+        "context": "<a class=\"nav-link active\" data-toggle=\"tab\" href=\"#all\" role=\"tab\" aria-selected=\"true\">Semua</a>",
+        "selector": "#myTab > li:nth-child(1) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
+        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#konseling\" role=\"tab\" aria-selected=\"true\">Konseling</a>",
+        "selector": "#myTab > li:nth-child(2) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
+        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#karir\" role=\"tab\" aria-selected=\"true\">Karir</a>",
+        "selector": "#myTab > li:nth-child(3) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
+        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#kewirausahaan\" role=\"tab\" aria-selected=\"true\">kewirausahaan</a>",
+        "selector": "#myTab > li:nth-child(4) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
+        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#prestasi\" role=\"tab\" aria-selected=\"true\">Prestasi</a>",
+        "selector": "#myTab > li:nth-child(5) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
+        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#tracer\" role=\"tab\" aria-selected=\"true\">Tracer Study</a>",
+        "selector": "#myTab > li:nth-child(6) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
+        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#beasiswa\" role=\"tab\" aria-selected=\"true\">Beasiswa</a>",
+        "selector": "#myTab > li:nth-child(7) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
+        "context": "<a class=\"nav-link\" data-toggle=\"tab\" href=\"#pengumuman\" role=\"tab\" aria-selected=\"false\">Pengumuman</a>",
+        "selector": "#myTab > li:nth-child(8) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/login": [
+      {
+        "code": "WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
+        "type": "error",
+        "typeCode": 1,
+        "message": "The html element should have a lang or xml:lang attribute which describes the language of the document.",
+        "context": "<html><head>\n<title>500 Internal Serv...</html>",
+        "selector": "html",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/dashboard": [
+      {
+        "code": "WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
+        "type": "error",
+        "typeCode": 1,
+        "message": "The html element should have a lang or xml:lang attribute which describes the language of the document.",
+        "context": "<html><head>\n<title>500 Internal Serv...</html>",
+        "selector": "html",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/persediaan/data": [
+      {
+        "code": "WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
+        "type": "error",
+        "typeCode": 1,
+        "message": "The html element should have a lang or xml:lang attribute which describes the language of the document.",
+        "context": "<html><head>\n<title>500 Internal Serv...</html>",
+        "selector": "html",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/rencana": [
+      {
+        "code": "WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
+        "type": "error",
+        "typeCode": 1,
+        "message": "The html element should have a lang or xml:lang attribute which describes the language of the document.",
+        "context": "<html><head>\n<title>500 Internal Serv...</html>",
+        "selector": "html",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ]
+  }
+}

@@ -1,8 +1,4 @@
-# Ignore node_modules in a11y-tooling folder
 /a11y-tooling/node_modules/
+/a11y-tooling/.lighthouseci/
+/application/logs/
 
-# Other typical ignores
-npm-debug.log*
-.env
-.vscode/
-.idea/

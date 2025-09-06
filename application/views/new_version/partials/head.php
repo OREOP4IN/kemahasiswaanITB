@@ -115,7 +115,7 @@
 
         <style type="text/css">
             @media screen and (max-width: 650px) {
-              #menus_no {
+              .extra-menu--item {
                 visibility: hidden;
                 clear: both;
                 float: left;

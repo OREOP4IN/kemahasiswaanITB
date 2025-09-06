@@ -44,15 +44,15 @@
         </div>
         <div class="extra-menu--list">
             <!-- <a href="https://www.itb.ac.id/staff" id="menus_no" class="extra-menu--item"><?= $this->lang->line('utama:staf'); ?></a> -->
-            <a href="https://www.itb.ac.id/students" id="menus_no" class="extra-menu--item"><?= $this->lang->line('utama:mahasiswa'); ?></a>
-            <a href="https://www.itb.ac.id/alumni" id="menus_no" class="extra-menu--item">Alumni</a>
-            <a href="https://www.itb.ac.id/mitra" id="menus_no" class="extra-menu--item"><?= $this->lang->line('utama:mitra'); ?></a>
-            <a href="https://www.itb.ac.id/pengunjung" id="menus_no" class="extra-menu--item"><?= $this->lang->line('utama:pengunjung'); ?></a>
-            <a href="https://www.itb.ac.id/pers" id="menus_no" class="extra-menu--item">Pers</a>
+            <a href="https://www.itb.ac.id/students" id="menus_no_students" class="extra-menu--item"><?= $this->lang->line('utama:mahasiswa'); ?></a>
+            <a href="https://www.itb.ac.id/alumni" id="menus_no_alumni" class="extra-menu--item">Alumni</a>
+            <a href="https://www.itb.ac.id/mitra" id="menus_no_citra" class="extra-menu--item"><?= $this->lang->line('utama:mitra'); ?></a>
+            <a href="https://www.itb.ac.id/pengunjung" id="menus_no_pengunjung" class="extra-menu--item"><?= $this->lang->line('utama:pengunjung'); ?></a>
+            <a href="https://www.itb.ac.id/pers" id="menus_no_pers" class="extra-menu--item">Pers</a>
             <a href="https://my.itb.ac.id" class="extra-menu--item">My ITB</a>
             <a href="https://www.itb.ac.id/covid19" class="extra-menu--item covid19">COVID 19</a>
-            <a href="https://www.itb.ac.id/contact" id="menus_no" class="extra-menu--item"><i class="icofont icofont-ui-message mr-2"></i><?= $this->lang->line('utama:kontak'); ?></a>
-            <a href="https://www.itb.ac.id/search" id="menus_no" class="extra-menu--item"><i class="icofont icofont-ui-search mr-2"></i>Search</a>
+            <a href="https://www.itb.ac.id/contact" id="menus_no_contact" class="extra-menu--item"><i class="icofont icofont-ui-message mr-2"></i><?= $this->lang->line('utama:kontak'); ?></a>
+            <a href="https://www.itb.ac.id/search" id="menus_no_search" class="extra-menu--item"><i class="icofont icofont-ui-search mr-2"></i>Search</a>
         </div>
     </div>
 </div>
@@ -68,8 +68,13 @@
         </div>
         
         <div class="main-nav--menu-list menu-list--dropdown">
-            <button type="button" class="menu-list--btn" tabindex="0"><?= strtoupper($this->lang->line('utama:profil')); ?></button>
-            <div class="menu-list--dropdown-content">
+            <button type="button" class="menu-list--btn" tabindex="0"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    id="profilMenuBtn">
+                <?= strtoupper($this->lang->line('utama:profil')); ?> sigma
+            </button>
+            <div class="menu-list--dropdown-content" aria-labelledby="profilMenuBtn">
                 <a href="<?= base_url('beranda/visi_misi') ?>" class="dropdown-content--list"><?= $this->lang->line('utama:visimisi'); ?></a>
                 <a href="<?= base_url('beranda/struktur_organisasi') ?>" class="dropdown-content--list"><?= $this->lang->line('utama:strukturorganisasi'); ?></a>
                 <a href="<?= base_url('beranda/landasan_hukum') ?>" class="dropdown-content--list"><?= $this->lang->line('utama:landasan'); ?></a>

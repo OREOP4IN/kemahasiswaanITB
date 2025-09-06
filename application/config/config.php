@@ -28,7 +28,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $base = "https://".$_SERVER['HTTP_HOST'];
 $base .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 // $config['base_url'] = $base;
-$config['base_url'] = 'http://localhost/kemahasiswaan/';;
+$config['base_url'] = 'http://kemahasiswaan.itb/';
+$config['index_page'] = '';  // empty for pretty URLs
+
 
 /*
 |--------------------------------------------------------------------------

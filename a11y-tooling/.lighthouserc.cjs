@@ -1,0 +1,49 @@
+module.exports = {
+  ci: {
+    collect: {
+      url: [
+        "http://kemahasiswaan.itb/",
+        "http://kemahasiswaan.itb/beranda",
+        "http://kemahasiswaan.itb/beranda/visi_misi",
+        "http://kemahasiswaan.itb/beranda/struktur_organisasi",
+        "http://kemahasiswaan.itb/beranda/landasan_hukum",
+        "http://kemahasiswaan.itb/beranda/tupoksi",
+        "http://kemahasiswaan.itb/beranda/buku/beasiswa",
+        "http://kemahasiswaan.itb/beranda/buku/kkn",
+        "http://kemahasiswaan.itb/beranda/buku/enj",
+        "http://kemahasiswaan.itb/beranda/buku/cerita-inspiratif",
+        "http://kemahasiswaan.itb/beranda/kontak",
+        "http://kemahasiswaan.itb/beranda/read/pengumuman/2460/penerima-bantuan-ikatan-orangtua-mahasiswa-itb-2025",
+        "http://kemahasiswaan.itb/beranda/read/pengumuman/2459/beasiswa-van-deventer-maas-indonesia-2025/2026",
+        "http://kemahasiswaan.itb/beranda/read/berita/2458/terus-berkembang-bersama-character-development-training-%28cdt%29-itb-tahap-ii-2024",
+        "http://kemahasiswaan.itb/beranda/read/berita/2453/pengmas-mahasiswa-itb-:-tingkatkan-literasi-masyarakat-desa,-mahasiswa-itb-kembangkan-pojok-baca-di-desa-cupunagara,-sumedang",
+        "http://kemahasiswaan.itb/beranda/read/berita/2457/turnamen-asrama-:-meriahkan-kebersamaan-penghuni-asrama-itb-jatinangor",
+        "http://kemahasiswaan.itb/beranda/ormawa",
+        "http://kemahasiswaan.itb/beranda/kegiatan",
+        "http://kemahasiswaan.itb/beranda/read/berita/2458/id/terus-berkembang-bersama-character-development-training-%28cdt%29-itb-tahap-ii-2024",
+        "http://kemahasiswaan.itb/beranda/read/berita/2453/id/pengmas-mahasiswa-itb-:-tingkatkan-literasi-masyarakat-desa,-mahasiswa-itb-kembangkan-pojok-baca-di-desa-cupunagara,-sumedang",
+        "http://kemahasiswaan.itb/beranda/read/berita/2457/id/turnamen-asrama-:-meriahkan-kebersamaan-penghuni-asrama-itb-jatinangor",
+        "http://kemahasiswaan.itb/beranda/berita",
+        "http://kemahasiswaan.itb/beranda/berita_konseling",
+        "http://kemahasiswaan.itb/beranda/berita_karir",
+        "http://kemahasiswaan.itb/beranda/berita_kewirausahaan",
+        "http://kemahasiswaan.itb/beranda/berita_prestasi",
+        "http://kemahasiswaan.itb/beranda/berita_tracer",
+        "http://kemahasiswaan.itb/beranda/pengumuman",
+        "http://kemahasiswaan.itb/beranda/read/pengumuman/2455/penerima-beasiswa-m10-foundation",
+        "http://kemahasiswaan.itb/beranda/read/pengumuman/2452/beasiswa-10-einstein",
+        "http://kemahasiswaan.itb/beranda/read/pengumuman/2451/beasiswa-alumni-tk-itb%E2%80%9999-semester-ii-2024/2025"
+    ],
+      startServerCommand: "",
+      numberOfRuns: 1,
+      settings: {
+        onlyCategories: ["accessibility"],
+        chromeFlags: "--no-sandbox"
+      }
+    },
+    upload: {
+      target: "filesystem",
+      outputDir: "./a11y-reports/lhci"
+    }
+  }
+};

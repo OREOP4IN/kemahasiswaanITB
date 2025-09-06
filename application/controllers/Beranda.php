@@ -98,7 +98,7 @@ class Beranda extends CI_Controller {
             'videoall'      =>  $videoall,
             'videoapi'      =>  ''
         );
-        var_dump($vars);
+        // var_dump($vars);
 
         $this->load->view('new_version/partials/head', $vars);
         $this->load->view('new_version/partials/main-navigation', $vars);

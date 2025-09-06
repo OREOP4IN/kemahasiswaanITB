@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "pa11y-ci": "^4.0.1"
+  },
+  "scripts": {
+    "test:accessibility": "pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "sitemap-generator": "^8.5.1"
+  }
+}

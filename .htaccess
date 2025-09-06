@@ -1,11 +1,19 @@
 Options -Indexes
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /kemahasiswaan/
-    
+    RewriteBase /
+    # matches your virtual host root
+
+    # Prevent redirect loops
+    RewriteCond %{REQUEST_URI} ^index\.php
+    RewriteRule ^index\.php(.*)$ /$1 [R=301,L]
+
+    # Don't rewrite existing files or directories
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php?/$1 [L]
 
-    # Remove HTTPS redirection for local WAMP
+    # Rewrite all other URLs to index.php
+    RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
+

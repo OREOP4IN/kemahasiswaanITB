@@ -1,0 +1,34 @@
+{
+  "name": "ci3-a11y-tooling",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "crawl": "node ./scripts/crawl.js",
+    "crawl:direct": "node ./scripts/crawl-urls-direct.js",
+    "axe": "node ./scripts/audit-axe.js",
+    "pa11y": "pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json",
+    "pa11y:report": "pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json",
+    "lhci:collect": "lhci collect --config=lhci.config.js",
+    "lhci:assert": "lhci assert --config=lhci.config.js",
+    "scan:views": "node ./scripts/scan-views.js",
+    "report": "node ./scripts/generate-md-report.js",
+    "audit": "npm-run-all -s crawl axe pa11y lhci:collect lhci:assert scan:views report",
+    "test:accessibility": "pa11y-ci --config pa11yci.json"
+  },
+  "dependencies": {
+    "axe-core": "^4.9.0",
+    "axe-html-reporter": "^2.2.11",
+    "chalk": "^5.3.0",
+    "globby": "^14.0.2",
+    "jsdom": "^24.0.0",
+    "npm-run-all": "^4.1.5",
+    "pa11y-ci": "^3.1.0",
+    "puppeteer": "^22.15.0",
+    "sitemap-generator": "^8.5.1",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "pa11y-reporter-html": "^2.0.0"
+  }
+}

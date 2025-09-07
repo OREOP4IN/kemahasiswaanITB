@@ -580,9 +580,9 @@ body {
   text-decoration: none;
 }
 
-.extra-menu--list .extra-menu--item.covid19 {
-  background-color: red;
-  color: #ffffff;
+.extra-menu--item.covid19 {
+    background-color: #e00;
+    color: #ffffff;
 }
 
 .extra-menu--list .extra-menu--item.covid19:hover {

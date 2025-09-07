@@ -59,22 +59,22 @@
                             <h6>Media Sosial</h6>
                             <div class="d-flex align-items-center">
                                 <a href="https://www.facebook.com/ditmawaITB" class="menu-social-media--item mr-3" data-toggle="tooltip" data-placement="top" title="Facebook">
-                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-facebook.svg"></div>
+                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-facebook.svg" alt="Facebook"></div>
                                 </a>
                                 <a href="https://www.instagram.com/ditmawa.itb/" class="menu-social-media--item mr-3" data-toggle="tooltip" data-placement="top" title="Instagram">
-                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-instagram.svg"></div>
+                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-instagram.svg" alt="Instagram"></div>
                                 </a>
                                 <a href="https://twitter.com/ditmawa_itb" class="menu-social-media--item mr-3" data-toggle="tooltip" data-placement="top" title="Twitter">
-                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-twitter.svg"></div>
+                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-twitter.svg" alt="Twitter"></div>
                                 </a>
                                 <a href="https://line.me/R/ti/p/%40ditmawa_itb" class="menu-social-media--item mr-3" data-toggle="tooltip" data-placement="top" title="Line Chat">
-                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-line.svg"></div>
+                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-line.svg" alt="Line"></div>
                                 </a>
                                 <a href="https://www.youtube.com/c/direktoratkemahasiswaanitb" class="menu-social-media--item mr-3" data-toggle="tooltip" data-placement="top" title="Youtube">
-                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-youtube.svg"></div>
+                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-youtube.svg" alt="Youtube"></div>
                                 </a>
                                 <a href="https://wa.me/6282318181959" class="menu-social-media--item mr-3" data-toggle="tooltip" data-placement="top" title="WhatsApp">
-                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-whatsapp.svg"></div>
+                                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-whatsapp.svg" alt="Whatsapp"></div>
                                 </a>
                             </div>
                         </div>

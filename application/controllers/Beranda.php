@@ -849,7 +849,7 @@ class Beranda extends CI_Controller {
         } else {
             $html =  ' <li> '.
                         ' <div class="info">'.
-                            '<p class="desc"><center><b>Tidak Ada Kegiatan..</b></center></p>'.
+                            '<p class="desc"><div class="text-center"><b>Tidak Ada Kegiatan..</b></div></p>'.
                         ' </div>'.
                     ' </li>';
         }
@@ -917,7 +917,7 @@ class Beranda extends CI_Controller {
             $html =  ' <li> '.
                         
                                     ' <div class="info">'.
-                                        '<p class="desc"><center><b>Tidak Ada Kegiatan..</b></center></p>'.
+                                        '<p class="desc"><div class="text-center"><b>Tidak Ada Kegiatan..</b></div></p>'.
                                     ' </div>'.
                                     
                                 ' </li>';

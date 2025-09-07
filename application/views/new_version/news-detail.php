@@ -50,9 +50,9 @@
                 </style>
                 <div class="d-block p-content">
                     <?php if ($konten[0]['img'] == ''): ?>
-                        <p><img src="<?= PATH_FOTO_CMS.'/8b0687b33d1086d13e8d020b722376dc.jpeg' ?>" class="w-100"></p>
+                        <p><img src="<?= PATH_FOTO_CMS.'/8b0687b33d1086d13e8d020b722376dc.jpeg' ?>" class="w-100" alt=""></p>
                     <?php else: ?>
-                         <p><img src="<?= PATH_FOTO_CMS.'/'.$konten[0]['img'] ?>" class="w-100"></p>
+                         <p><img src="<?= PATH_FOTO_CMS.'/'.$konten[0]['img'] ?>" class="w-100" alt=""></p>
                     <?php endif ?>
 
                      <?php if (($site_lang == 'english' || $lang == 'en' ) && $konten[0]['judul_eng'] != ''): ?>

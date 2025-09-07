@@ -3,8 +3,8 @@
 <!-- Home Banner -->
 <div class="slide-banner--container" style="position:absolute;!important">
 
-    <button id="prevBanner" class="prev-slider"><img src="<?= base_url('../assets/new_version') ?>/images/prev-arrow.svg"></button>
-    <button id="nextBanner" class="next-slider"><img src="<?= base_url('../assets/new_version') ?>/images/next-arrow.svg"></button>
+    <button id="prevBanner" class="prev-slider" aria-label="Previous banner"><img src="<?= base_url('../assets/new_version') ?>/images/prev-arrow.svg" alt="Previous Banner"></button>
+    <button id="nextBanner" class="next-slider" aria-label="Next banner"><img src="<?= base_url('../assets/new_version') ?>/images/next-arrow.svg" alt="Next Banner"></button>
 
     <div id="slideBanner" class="slide-banner" style="position:absolute;!important">
 
@@ -174,7 +174,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <div class="p-3">
-                    <div class="font-weight-bold text-sm">➤ Punya UKM yang baru digarap? <a href="#" class="link-blue">Ajukan UKM kamu disini</a></div>
+                    <div class="font-weight-bold text-sm">➤ Punya UKM yang baru digarap? 
+                        <a href="#" class="link-blue">Ajukan UKM kamu disini</a>
+                    </div>
                 </div>
             </div>
         </div>

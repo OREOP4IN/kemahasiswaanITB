@@ -58,7 +58,8 @@
 </div>
 <div class="main-nav shadow-sm">
     <div class="main-nav--logo">
-        <a href="https://kemahasiswaan.itb.ac.id"><img src="<?= base_url('assets/new_version') ?>/images/logo-kemahasiswaan-itb.png" alt="Logo Kemahasiswaan ITB" width="236"></a>
+        <!-- <a href="https://kemahasiswaan.itb.ac.id"><img src="<?= base_url('assets/new_version') ?>/images/logo-kemahasiswaan-itb.png" alt="Logo Kemahasiswaan ITB" width="236"></a> -->
+        <a href="<?= base_url() ?>"><img src="<?= base_url('assets/new_version') ?>/images/logo-kemahasiswaan-itb.png" alt="Logo Kemahasiswaan ITB" width="236"></a>
     </div>
 
     <div class="main-nav--menu hide-mobile">
@@ -72,7 +73,7 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                     id="profilMenuBtn">
-                <?= strtoupper($this->lang->line('utama:profil')); ?> sigma
+                <?= strtoupper($this->lang->line('utama:profil')); ?>
             </button>
             <div class="menu-list--dropdown-content" aria-labelledby="profilMenuBtn">
                 <a href="<?= base_url('beranda/visi_misi') ?>" class="dropdown-content--list"><?= $this->lang->line('utama:visimisi'); ?></a>
@@ -154,8 +155,8 @@
 
     <!-- Nav Toggle -->
     <div class="show-mobile">
-        <div class="main-nav--menu">
-            <button type="button" id="btnOpen" class="btn-burger"><div class="inner"></div></button>
+        <div class="main-nav--menu">    
+            <button type="button" id="btnOpen" class="btn-burger" aria-label="Open main menu" aria-expanded="false" aria-controls="main-nav"><div class="inner"></div></button>
         </div>
     </div>
 </div>
@@ -168,7 +169,7 @@
                 <h4 class="font-weight-bold m-0">Menu</h4>
             </div>
             <div>
-                <button type="button" id="btnClose" class="btn-close"><div class="inner"></div></button>
+                <button type="button" id="btnClose" class="btn-close" aria-label="Close menu"><div class="inner"></div></button>
             </div>
         </div>
 
@@ -182,10 +183,17 @@
         </div>
             <div class="menu-lists">
                 <div class="d-block w-100">
-                    <button class="btn text-left btn-block w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+                    <button 
+                        class="btn text-left btn-block w-100" 
+                        type="button" 
+                        data-toggle="collapse" 
+                        data-target="#collapseOne" 
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                        aria-label="Toggle Profile menu" >
                         <div class="d-flex align-items-center justify-content-between">
-                            <div>Profil</div>
-                            <div><img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12"></div>
+                            <span>Profil</span>
+                            <img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12" alt="">
                         </div>
                     </button>
                     <div id="collapseOne" class="collapse">
@@ -201,10 +209,17 @@
                     </div>
                 </div>
                 <div class="d-block w-100">
-                    <button class="btn text-left btn-block w-100" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true">
+                    <button 
+                        class="btn text-left btn-block w-100"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                        aria-label="Toggle Links menu">
                         <div class="d-flex align-items-center justify-content-between">
-                            <div>Tautan</div>
-                            <div><img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12"></div>
+                            <span>Tautan</span>
+                            <img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12" alt="">
                         </div>
                     </button>
                     <div id="collapseTwo" class="collapse">
@@ -248,10 +263,17 @@
                     </div>
                 </div>
                 <div class="d-block w-100">
-                    <button class="btn text-left btn-block w-100" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true">
+                    <button
+                        class="btn text-left btn-block w-100"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                        aria-label="Toggle Books menu">
                         <div class="d-flex align-items-center justify-content-between">
-                            <div>Buku</div>
-                            <div><img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12"></div>
+                            <span>Buku</span>
+                            <img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12" alt="">
                         </div>
                     </button>
                     <div id="collapseThree" class="collapse">
@@ -270,8 +292,8 @@
                 <div class="d-block w-100">
                     <button class="btn text-left btn-block w-100" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true">
                         <div class="d-flex align-items-center justify-content-between">
-                            <div>Panduan</div>
-                            <div><img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12"></div>
+                            <span>Panduan</span>
+                            <img src="<?= base_url('assets/new_version') ?>/images/chevron-down.svg" width="12" alt="">
                         </div>
                     </button>
                     <div id="collapseFour" class="collapse">
@@ -360,4 +382,14 @@
             });
         });
     });
+    // NOTES: re-check this
+    // document.querySelectorAll('.menu-lists button[data-toggle="collapse"]').forEach(btn => {
+    //     const targetId = btn.getAttribute('data-target');
+    //     const target = document.querySelector(targetId);
+
+    //     btn.addEventListener('click', () => {
+    //         const expanded = btn.getAttribute('aria-expanded') === 'true';
+    //         btn.setAttribute('aria-expanded', String(!expanded));
+    //     });
+    // });
 </script>

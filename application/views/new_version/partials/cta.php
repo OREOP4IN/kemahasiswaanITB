@@ -14,12 +14,8 @@
             <div class="row justify-content-center" style="padding: 0px">
               <?php foreach ($videoall as $key): ?>
                 <div class="col-md-3 text-center">
-                   
                     <hr class="blue">
-                    
-                     <iframe width="100%" height="180px" class="embed-responsive-item" src="<?= $key->video_url.($key->auto_play == '1' ?'?rel=0&amp;autoplay=1&mute=1':'' ) ?>" allowfullscreen></iframe>
-                  
-            
+                     <iframe width="100%" height="180px" class="embed-responsive-item" src="<?= $key->video_url.($key->auto_play == '1' ?'?rel=0&amp;autoplay=1&mute=1':'' ) ?>" allowfullscreen title="Youtube Video"></iframe>
                 </div>
                 <?php endforeach ?> 
 

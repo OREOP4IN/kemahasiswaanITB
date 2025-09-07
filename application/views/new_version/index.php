@@ -174,7 +174,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <div class="p-3">
-                    <div class="font-weight-bold text-sm">➤ Punya UKM yang baru digarap? <a href="#" class="link-blue">Ajukan UKM kamu disini</a></div>
+                    <div class="font-weight-bold text-sm">➤ Punya UKM yang baru digarap? 
+                        <a href="#" class="link-blue">Ajukan UKM kamu disini</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
 }
 
 .text-muted {
-  color: #8FA7BE !important;
+  color: #000509 !important;
 }
 
 .text-sm {
@@ -1078,11 +1078,12 @@ body {
   border: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  color: #3d4c5a;
 }
 
 .tab-header--menu .nav-tabs .nav-link.active {
   background: transparent;
-  color: #C09451;
+  color: #090600;
   border-color: none;
 }
 

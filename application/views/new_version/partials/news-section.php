@@ -110,21 +110,23 @@
              
             </div>
 
-             <div class="tab-pane fade" id="konseling" role="tabpanel">
-                  <div class="row">
+            <div class="tab-pane fade" id="konseling" role="tabpanel">
+                <div class="row">
                     <?php $site_lang = $this->session->userdata('site_lang'); ?>
                     <?php foreach ($berita_konseling as $key): ?>
 
                         <?php if ($site_lang == 'english' && $key['judul_eng'] != ''): ?>
 
-                         <div class="col-lg-3 col-md-4 col-6 mb-4">
-                         <a href="<?= base_url('beranda/read/berita/'.$key['id_cms'].'/en/'.strtolower(str_replace($replace, "-", $key['judul_eng']))); ?>" class="card border-0 rounded-0 card-border-bottom lift h-100">
+                        <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <a href="<?= base_url('beranda/read/berita/'.$key['id_cms'].'/en/'.strtolower(str_replace($replace, "-", $key['judul_eng']))); ?>" class="card border-0 rounded-0 card-border-bottom lift h-100" aria-label="<?= $key['judul_eng'] ?>">
                                 <?php if ($key['img'] == ''): ?>
-                                    <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS ?>8b0687b33d1086d13e8d020b722376dc.jpeg')"></div>
+                                    <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS ?>8b0687b33d1086d13e8d020b722376dc.jpeg')" aria-hidden="true"></div>
+                                    <span class="sr-only"><?= $key['judul_eng'] ?></span>
                                 <?php else: ?>
-                                     <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS.$key['img'] ?>')"></div>
+                                    <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS.$key['img'] ?>')" aria-hidden="true"></div>
+                                    <span class="sr-only"><?= $key['judul_eng'] ?></span>
                                 <?php endif ?>
-                                 
+                                
                                 <div class="card-body">
                                     <small class="font-weight-bold text-primary d-block mb-1"><?= tanggal_indo_lengkap_eng($key['tgl_publish']);?>
                                         <span class="font-weight-bold text-primary pull-right" style="color:#8c8c8c;"><b> <i class="fa fa-eye"></i> <i><?= $key['hint']?></i></b></span>
@@ -140,18 +142,20 @@
                         <?php else: ?>
 
                         <div class="col-lg-3 col-md-4 col-6 mb-4">
-                         <a href="<?= base_url('beranda/read/berita/'.$key['id_cms'].'/id/'.strtolower(str_replace($replace, "-", $key['judul']))); ?>" class="card border-0 rounded-0 card-border-bottom lift h-100">
+                        <a href="<?= base_url('beranda/read/berita/'.$key['id_cms'].'/id/'.strtolower(str_replace($replace, "-", $key['judul']))); ?>" class="card border-0 rounded-0 card-border-bottom lift h-100" aria-label="<?= $key['judul'] ?>">
                                 <?php if ($key['img'] == ''): ?>
-                                    <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS ?>8b0687b33d1086d13e8d020b722376dc.jpeg')"></div>
+                                    <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS ?>8b0687b33d1086d13e8d020b722376dc.jpeg')" aria-hidden="true"></div>
+                                    <span class="sr-only"><?= $key['judul'] ?></span>
                                 <?php else: ?>
-                                     <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS.$key['img'] ?>')"></div>
+                                    <div class="card-images" style="background-image:url('<?= PATH_FOTO_CMS.$key['img'] ?>')" aria-hidden="true"></div>
+                                    <span class="sr-only"><?= $key['judul'] ?></span>
                                 <?php endif ?>
 
                                 <div class="card-body">
                                     <small class="font-weight-bold text-primary d-block mb-1"><?= tanggal_indo_lengkap($key['tgl_publish']);?>
                                         <span class="font-weight-bold text-primary pull-right" style="color:#8c8c8c;"><b> <i class="fa fa-eye"></i> <i><?= $key['hint']?></i></b></span>
                                     </small>
-                                     
+                                    
                                     <h6 class="font-weight-normal text-sm text-dark">
                                         <?= substr($key['judul'], 0,46).'...' ?>
                                     </h6>
@@ -159,14 +163,14 @@
                             </a>
                         </div>
 
-                         <?php endif ?>
-                   
+                        <?php endif ?>
+                
                         
                     <?php endforeach ?>
-                  
+                
                 </div>
 
-                 <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center">
                             <a href="<?= base_url('beranda/berita_konseling') ?>" class="btn btn-outline-primary btn-sm"><?= $this->lang->line('utama:lainnya'); ?></a>
                     </div>   
             </div>

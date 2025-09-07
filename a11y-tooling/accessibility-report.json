@@ -1,7 +1,7 @@
 {
-  "total": 1,
+  "total": 30,
   "passes": 0,
-  "errors": 4,
+  "errors": 127,
   "results": {
     "http://kemahasiswaan.itb/": [
       {
@@ -11,6 +11,1294 @@
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.18:1. Recommendation:  change background to #6f777f.",
         "context": "<h4 class=\"section-title\" style=\"color:white\">Video </h4>",
         "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > h4",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/visi_misi": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/struktur_organisasi": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/landasan_hukum": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/tupoksi": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/buku/beasiswa": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/buku/kkn": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/buku/enj": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/buku/cerita-inspiratif": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/kontak": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/pengumuman/2460/penerima-bantuan-ikatan-orangtua-mahasiswa-itb-2025": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://kemahasiswaan.itb.ac.id/assets/AdminLTE-2.3.0/plugins/ckeditor/plugins/responsive_filemanager//source/PENERIMA%20IOM%20UKT%20%2C%20BIAYA%20HIDUP%20DAN%20TA%202025.pdf\">terlampir</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(3) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/pengumuman/2459/beasiswa-van-deventer-maas-indonesia-2025/2026": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"http://ers.vdms-scholarship.org/\">ers.vdms-scholarship.org</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(4) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://finaid.itb.ac.id/\" rel=\"noopener\" target=\"_blank\">https://finaid.itb.ac.id/</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > ol:nth-child(6) > li:nth-child(5) > strong:nth-child(2) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://kemahasiswaan.itb.ac.id/assets/AdminLTE-2.3.0/plugins/ckeditor/plugins/responsive_filemanager//source/Formulir%20VDMI%202025-2026.pdf\">terlampir</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > ol:nth-child(8) > li:nth-child(1) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://kemahasiswaan.itb.ac.id/assets/AdminLTE-2.3.0/plugins/ckeditor/plugins/responsive_filemanager//source/2025-Manual-Book-ORS-VDMI.pdf\">YVDMI Manual Book</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(9) > strong > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Anchor element found with a valid href attribute, but no link content has been supplied.",
+        "context": "<a href=\"https://kemahasiswaan.itb.ac.id/assets/AdminLTE-2.3.0/plugins/ckeditor/plugins/responsive_filemanager//source/2025-Manual-Book-ORS-VDMI.pdf\">&nbsp;</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(9) > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/berita/2458/terus-berkembang-bersama-character-development-training-%28cdt%29-itb-tahap-ii-2024": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/berita/2453/pengmas-mahasiswa-itb-:-tingkatkan-literasi-masyarakat-desa,-mahasiswa-itb-kembangkan-pojok-baca-di-desa-cupunagara,-sumedang": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/berita/2457/turnamen-asrama-:-meriahkan-kebersamaan-penghuni-asrama-itb-jatinangor": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXd6pPlNz9sV-asiElpRKZBSE_gBIa8k9KrQ8N-boPpv1Cs2SvEhOh_U-K2uhvCfxOhQ_UEIYd2bPskdndwOBkXMQqmmmiFqAKdM1BlFd4KbjRS6NzyZ421uUgUYkpVFftRJL2cNlw?key=CuQ4pDfXJ7qU1gPlEFssOqDy\" style=\"height:339px; wid...",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(6) > span > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/ormawa": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/LOGO_AAPG_ITB.png\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(1) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">1. Membangun pemberdayaan bagi ...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(1) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/193_logo.jpg\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(2) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">1. Mewadahi dan memfasilitasi m...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(2) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/Screenshot_2023-11-26_035825.png\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(3) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">1. To establish an exciting and...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(3) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/201_logo.png\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(4) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">1. Mengakomodasi pengembangan a...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(4) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/185_logo.jpg\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(5) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">Mengembangkan semangat dan menu...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(5) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/209_logo.png\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(6) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">Mempererat hubungan dan komunik...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(6) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/Picture1.jpg\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(7) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">Menunjang relevansi dan eksiste...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(7) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/187_logo.png\" style=\"width:90px;\">",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(8) > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">1. Meningkatkan keilmuan energi...</td>",
+        "selector": "#table_id_ukm > tbody > tr:nth-child(8) > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"http://kemahasiswaan.itb/assets/berkas_kegiatan/198_logo.png\" style=\"width:90px;\">",
+        "selector": "#table_id_km > tbody > tr > td:nth-child(2) > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Align attributes .",
+        "context": "<td align=\"justify\">1. Memperkuat Sistem Organisasi...</td>",
+        "selector": "#table_id_km > tbody > tr > td:nth-child(6)",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/kegiatan": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.31:1. Recommendation:  change background to #317ab9.",
+        "context": "<span class=\"badge badge-today\">7</span>",
+        "selector": "#zabuto_calendar_azn_2025-09-07_day > span",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.85:1. Recommendation:  change text colour to #767676.",
+        "context": "<span> &lt; 25 Kegiatan</span>",
+        "selector": "#zabuto_calendar_azn_legend > span:nth-child(1) > span",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.85:1. Recommendation:  change text colour to #767676.",
+        "context": "<span> 25-50 Kegiatan</span>",
+        "selector": "#zabuto_calendar_azn_legend > span:nth-child(2) > span",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.85:1. Recommendation:  change text colour to #767676.",
+        "context": "<span> &gt; 50 Kegiatan</span>",
+        "selector": "#zabuto_calendar_azn_legend > span:nth-child(3) > span",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.",
+        "context": "<h3 class=\"mb-4\"></h3>",
+        "selector": "html > body > div:nth-child(6) > div > div > div > div > div:nth-child(3) > h3",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/berita/2458/id/terus-berkembang-bersama-character-development-training-%28cdt%29-itb-tahap-ii-2024": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/berita/2453/id/pengmas-mahasiswa-itb-:-tingkatkan-literasi-masyarakat-desa,-mahasiswa-itb-kembangkan-pojok-baca-di-desa-cupunagara,-sumedang": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/berita/2457/id/turnamen-asrama-:-meriahkan-kebersamaan-penghuni-asrama-itb-jatinangor": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+        "context": "<img src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXd6pPlNz9sV-asiElpRKZBSE_gBIa8k9KrQ8N-boPpv1Cs2SvEhOh_U-K2uhvCfxOhQ_UEIYd2bPskdndwOBkXMQqmmmiFqAKdM1BlFd4KbjRS6NzyZ421uUgUYkpVFftRJL2cNlw?key=CuQ4pDfXJ7qU1gPlEFssOqDy\" style=\"height:339px; wid...",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(6) > span > img",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/berita": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/berita_konseling": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/berita_karir": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/berita_kewirausahaan": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/berita_prestasi": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/berita_tracer": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/pengumuman": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/pengumuman/2455/penerima-beasiswa-m10-foundation": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/pengumuman/2452/beasiswa-10-einstein": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://finaid.itb.ac.id/\">https://finaid.itb.ac.id/</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(4) > strong > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<strong>disini</strong>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > ol > li:nth-child(1) > a > strong",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://finaid.itb.ac.id/\" rel=\"noopener\" target=\"_blank\">https://finaid.itb.ac.id/</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > ol > li:nth-child(5) > strong > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.2:1. Recommendation:  change background to #398627.",
+        "context": "<div class=\"svelte-1xkyjie\">Hubungi Kami</div>",
+        "selector": "#qismo-widget > main > div > div",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&amp;cs_name=Layanan Terpadu&amp;welcome_text=Selamat datang d...",
+        "selector": "#qcw-welcome-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+        "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
+        "selector": "#qcw-login-form-iframe",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      }
+    ],
+    "http://kemahasiswaan.itb/beranda/read/pengumuman/2451/beasiswa-alumni-tk-itb%E2%80%9999-semester-ii-2024/2025": [
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://finaid.itb.ac.id/\" rel=\"noopener\" target=\"_blank\">https://finaid.itb.ac.id/</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > p:nth-child(4) > strong > a",
+        "runner": "htmlcs",
+        "runnerExtras": {}
+      },
+      {
+        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "type": "error",
+        "typeCode": 1,
+        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.76:1. Recommendation:  change text colour to #9a6e2b.",
+        "context": "<a href=\"https://kemahasiswaan.itb.ac.id/assets/AdminLTE-2.3.0/plugins/ckeditor/plugins/responsive_filemanager//source/Formulir%20Beasiswa%20Baru%20update_2.xlsx\">download</a>",
+        "selector": "html > body > div:nth-child(6) > div > div > div:nth-child(1) > div:nth-child(4) > ol > li:nth-child(1) > a",
         "runner": "htmlcs",
         "runnerExtras": {}
       },

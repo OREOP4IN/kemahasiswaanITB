@@ -4,8 +4,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="slide-quotes--container">
-                    <button id="prevQuotes" class="prev-slider"><img src="<?= base_url() ?>/assets/new_version/images/next-arrow-quotes.svg"></button>
-                    <button id="nextQuotes" class="next-slider"><img src="<?= base_url() ?>/assets/new_version/images/prev-arrow-quotes.svg"></button>
+                    <button id="prevQuotes" class="prev-slider" aria-label="Previous Quote"><img src="<?= base_url() ?>/assets/new_version/images/next-arrow-quotes.svg" alt="Previous Quoute"></button>
+                    <button id="nextQuotes" class="next-slider" aria-label="Next Quote"><img src="<?= base_url() ?>/assets/new_version/images/prev-arrow-quotes.svg" alt="Next Quoute"></button>
                     <div id="slideQuotes" class="quotes-list">
 
                          <?php $page; $i = 1;foreach($quotes->result() as $q){ ?>

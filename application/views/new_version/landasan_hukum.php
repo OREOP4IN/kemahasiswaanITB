@@ -6,8 +6,8 @@
              <div class="col-md-8">
                 <div class="card shadow border-0 mb-lg-5">
                     <div class="card-body">
-                        <div class="d-block px-lg-2">
-                            <h1 class="mb-4"><?= $this->lang->line('utama:landasanhukum'); ?></h1>
+                        <div class="d-block px-lg-2 text-center">
+                            <h1 class="mb-4"><?= $this->lang->line('utama:landasan'); ?></h1>
                             <h5 class="text-regular" style="text-align: justify;">
                                  <div class="text-center">Terbentuknya Direktorat Kemahasiswaan Berdasarkan </div>
                             </h5>

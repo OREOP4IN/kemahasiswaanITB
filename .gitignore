@@ -1,4 +1,8 @@
 /a11y-tooling/node_modules/
 /a11y-tooling/.lighthouseci/
+/a11y-tooling/package-lock.json
 /application/logs/
+/node_modules
 
+package-lock.json
+phpCAS.log

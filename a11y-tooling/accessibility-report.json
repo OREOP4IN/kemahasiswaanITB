@@ -1,19 +1,9 @@
 {
   "total": 1,
   "passes": 0,
-  "errors": 22,
+  "errors": 4,
   "results": {
     "http://kemahasiswaan.itb/": [
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Center",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Presentational markup used that has become obsolete in HTML5.",
-        "context": "<center>\n        <div class=\"row\">\n    ...</center>",
-        "selector": "html > body > div:nth-child(11) > div > center",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
       {
         "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "type": "error",
@@ -21,96 +11,6 @@
         "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.18:1. Recommendation:  change background to #6f777f.",
         "context": "<h4 class=\"section-title\" style=\"color:white\">Video </h4>",
         "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > h4",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
-        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/_r8es9IiSyc\" allowfullscreen=\"\"></iframe>",
-        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(1) > iframe",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
-        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/z7K-0CW0Ehg?si=GQNtYTPHw6174Wpk\" allowfullscreen=\"\"></iframe>",
-        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(2) > iframe",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
-        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/C8yc-4VEkJo\" allowfullscreen=\"\"></iframe>",
-        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(3) > iframe",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
-        "context": "<iframe width=\"100%\" height=\"180px\" class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/1G0PL5YDYLc?si=hK3E67PbxvXxZe75?rel=0&amp;autoplay=1&amp;mute=1\" allowfullscreen=\"\"></iframe>",
-        "selector": "html > body > div:nth-child(14) > div:nth-child(2) > div > div > div:nth-child(4) > iframe",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<button id=\"prevQuotes\" class=\"prev-slider slick-arrow slick-hidden\" aria-disabled=\"true\" tabindex=\"-1\"><img src=\"http://kemahasiswaan....</button>",
-        "selector": "#prevQuotes",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-        "context": "<img src=\"http://kemahasiswaan.itb//assets/new_version/images/next-arrow-quotes.svg\">",
-        "selector": "#prevQuotes > img",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This button element does not have a name available to an accessibility API. Valid names are: title undefined, element content, aria-label undefined, aria-labelledby undefined.",
-        "context": "<button id=\"nextQuotes\" class=\"next-slider slick-arrow slick-hidden\" aria-disabled=\"true\" tabindex=\"-1\"><img src=\"http://kemahasiswaan....</button>",
-        "selector": "#nextQuotes",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-        "type": "error",
-        "typeCode": 1,
-        "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-        "context": "<img src=\"http://kemahasiswaan.itb//assets/new_version/images/prev-arrow-quotes.svg\">",
-        "selector": "#nextQuotes > img",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.31:1. Recommendation:  change text colour to #000509.",
-        "context": "<div class=\"d-block text-center small text-muted mb-2\">© Direktorat Kemahasiswaan Inst...</div>",
-        "selector": "#footweb > div:nth-child(2) > div",
         "runner": "htmlcs",
         "runnerExtras": {}
       },
@@ -141,86 +41,6 @@
         "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
         "context": "<iframe src=\"//multichannel.qiscus.com/iframes/v4/xheop-u1kttqcvsim2wtl/login-form?formGreet=Selamat Datang di Layanan Terpadu&amp;formSubtitle=Mohon melengkapi data berikut sebelum memulai percakapan dengan kami.&amp;buttonLabel=Mulai Chat&amp;custo...",
         "selector": "#qcw-login-form-iframe",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.57:1. Recommendation:  change text colour to #090600.",
-        "context": "<a class=\"nav-link active\" data-toggle=\"tab\" href=\"#all\" role=\"tab\" aria-selected=\"true\">Semua</a>",
-        "selector": "#myTab > li:nth-child(1) > a",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
-        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#konseling\" role=\"tab\" aria-selected=\"true\">Konseling</a>",
-        "selector": "#myTab > li:nth-child(2) > a",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
-        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#karir\" role=\"tab\" aria-selected=\"true\">Karir</a>",
-        "selector": "#myTab > li:nth-child(3) > a",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
-        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#kewirausahaan\" role=\"tab\" aria-selected=\"true\">kewirausahaan</a>",
-        "selector": "#myTab > li:nth-child(4) > a",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
-        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#prestasi\" role=\"tab\" aria-selected=\"true\">Prestasi</a>",
-        "selector": "#myTab > li:nth-child(5) > a",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
-        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#tracer\" role=\"tab\" aria-selected=\"true\">Tracer Study</a>",
-        "selector": "#myTab > li:nth-child(6) > a",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
-        "context": "<a class=\"nav-link \" data-toggle=\"tab\" href=\"#beasiswa\" role=\"tab\" aria-selected=\"true\">Beasiswa</a>",
-        "selector": "#myTab > li:nth-child(7) > a",
-        "runner": "htmlcs",
-        "runnerExtras": {}
-      },
-      {
-        "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "type": "error",
-        "typeCode": 1,
-        "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.29:1. Recommendation:  change background to #fafdff.",
-        "context": "<a class=\"nav-link\" data-toggle=\"tab\" href=\"#pengumuman\" role=\"tab\" aria-selected=\"false\">Pengumuman</a>",
-        "selector": "#myTab > li:nth-child(8) > a",
         "runner": "htmlcs",
         "runnerExtras": {}
       }

@@ -11,35 +11,44 @@ $lang['utama:mitra'] = 'Mitra';
 $lang['utama:pengunjung'] = 'Pengunjung';
 $lang['utama:tautan'] = 'Tautan';
 $lang['utama:asrama'] = 'Dormitory';
-$lang['utama:kewirausahaan'] = 'kewirausahaan';
 $lang['utama:landasan'] = 'Landasan Hukum';
 $lang['utama:tupoksi'] = 'Tugas & Fungsi';
+$lang['utama:kewirausahaan'] = 'kewirausahaan';
 $lang['utama:panduanprogrampengmas'] = 'Panduan Program Pengmas';
+
 $lang['utama:ormawa'] ='Organisasi Kemahasiswaan';
+$lang['utama:daftarkegiatan'] = 'Activity List';
+
 $lang['utama:beranda'] = 'Beranda';
 $lang['utama:profil'] = 'Profil';
 $lang['utama:visimisi'] = 'Visi dan Misi';
 $lang['utama:visi'] = 'Visi';
 $lang['utama:misi'] = 'Misi';
+
 $lang['utama:daftarpengumuman'] = 'Daftar Pengumuman';
 $lang['utama:strukturorganisasi'] = 'Struktur Organisasi';
+
 $lang['utama:infolainnya'] = 'Info Lainnya';
 $lang['utama:lainnya'] = 'Selengkapnya';
 $lang['utama:selanjutnya'] = 'Selanjutnya';
 $lang['utama:terakhir'] = 'Terakhir';
 $lang['utama:link'] = 'Link';
+
 $lang['utama:tracerstudy'] = 'Tracer Study';
 $lang['utama:simaskar'] = 'Simaskar';
 $lang['utama:siprima'] = 'Siprima';
 $lang['utama:bimbingankonseling'] = 'Bimbingan Konseling';
+
 $lang['utama:buku'] = 'Buku';
 $lang['utama:ceritainspiratif'] = 'Cerita Inspiratif';
 $lang['utama:enj'] = 'ENJ';
 $lang['utama:panduan'] = 'Panduan';
 $lang['utama:panduaninputprestasi'] = 'Panduan Input Prestasi';
 $lang['utama:panduanpilmapres'] = 'Panduan PILMAPRES';
+
 $lang['utama:kontak'] = 'Kontak';
 $lang['utama:faq'] = 'FAQ';
+
 $lang['utama:beasiswa'] = 'Beasiswa';
 $lang['utama:konseling'] = 'Konseling';
 $lang['utama:organisasi'] = 'Organisasi';
@@ -49,12 +58,14 @@ $lang['utama:kegiatan'] = 'Kegiatan';
 $lang['utama:kompetisi'] = 'Kompetisi';
 $lang['utama:karir'] = 'Karir';
 $lang['utama:kariritb'] = 'Karir ITB';
+
 $lang['utama:berita'] = 'Berita';
 $lang['utama:beritakarir'] = 'Berita Karir';
 $lang['utama:beritakonseling'] = 'Berita Konseling';
 $lang['utama:beritakewirausahaan'] = 'Berita Kewirausahaan';
 $lang['utama:beritaprestasi'] = 'Berita Prestasi';
 $lang['utama:pengumuman'] = 'Pengumuman';
+
 $lang['utama:video'] = 'Video';
 $lang['utama:quotes'] = 'Quotes';
 $lang['utama:ditmawa'] = 'Direktorat Kemahasiswaan Institut Teknologi Bandung';

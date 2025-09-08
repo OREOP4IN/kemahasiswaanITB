@@ -7,7 +7,7 @@
 }
 
 .text-muted {
-  color: #000509 !important;
+  color: #616970  !important;
 }
 
 .text-sm {
@@ -1083,7 +1083,7 @@ body {
 
 .tab-header--menu .nav-tabs .nav-link.active {
   background: transparent;
-  color: #090600;
+  color: #90682c;
   border-color: none;
 }
 
@@ -1092,7 +1092,7 @@ body {
 }
 
 .tab-header--menu .nav-tabs .nav-link:hover {
-  color: #C09451;
+  color: #90682c;
 }
 
 .tab-header--menu .nav-tabs .nav-link:hover:before {
@@ -1387,13 +1387,13 @@ body {
 .p-content p a {
   text-decoration: underline;
   font-weight: 500;
-  color: #C09451;
+  color: #90682c;
 }
 
 .p-content a {
   text-decoration: underline;
   font-weight: 500;
-  color: #C09451;
+  color: #90682c;
 }
 
 .separator {

@@ -23,8 +23,8 @@
 <!-- Home Banner -->
 <div class="slide-banner--container">
 
-    <button id="prevBanner" class="prev-slider" aria-label="Previous banner"><img src="<?= ARROW_SLIDER ?>/images/prev-arrow.svg" alt="Previous Banner"></button>
-    <button id="nextBanner" class="next-slider" aria-label="Next banner"><img src="<?= ARROW_SLIDER ?>/images/next-arrow.svg" alt="Next Banner"></button>
+    <button id="prevBanner" class="prev-slider" aria-label="Previous banner" title="Previous Banner" data-toggle="tooltip" data-placement="top"><img src="<?= ARROW_SLIDER ?>/images/prev-arrow.svg" alt="Previous Banner"></button>
+    <button id="nextBanner" class="next-slider" aria-label="Next banner" title="Next Banner" data-toggle="tooltip" data-placement="top"><img src="<?= ARROW_SLIDER ?>/images/next-arrow.svg" alt="Next Banner"></button>
 
     <div id="slideBanner" class="slide-banner">
         
@@ -37,7 +37,7 @@
 
                 <?php if($hl->id_kategori_cms == 0 && $hl->judul_eng != ''){ ?>
 
-                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>">
+                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>" data-toggle="tooltip" data-placement="top" title="<?= isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
                         <div class="slide-banner--title" style="background-color: grey; padding: 5px;opacity: 0.9; border-radius: 10px;"><b> <?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
                      </div>
@@ -45,7 +45,7 @@
 
                 <?php }else if($hl->id_kategori_cms != 0){ ?>
 
-                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>">
+                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>" data-toggle="tooltip" data-placement="top" title="<?= isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
                         <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
                      </div>
@@ -61,7 +61,7 @@
 
                 <?php if($hl->id_kategori_cms == 0){ ?>
 
-                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>">
+                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>" data-toggle="tooltip" data-placement="top" title="<?= $hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
                         <div class="slide-banner--title" style="background-color: grey; padding: 5px;opacity: 0.9; border-radius: 10px;"><b> <?= $hl->judul ?></b></div>
                      </div>
@@ -69,7 +69,7 @@
 
                 <?php }else if($hl->id_kategori_cms != 0){ ?>
 
-                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>">
+                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>" data-toggle="tooltip" data-placement="top" title="<?= $hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
                         <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= $hl->judul ?></b></div>
                      </div>

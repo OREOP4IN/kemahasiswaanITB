@@ -8,6 +8,7 @@
     "axe": "node ./scripts/audit-axe.js",
     "pa11y:collect": "pa11y-ci --config pa11yci-all.json --reporter json > accessibility-report.json",
     "format": "prettier -w accessibility-report.json",
+    "pa": "pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json",
     "pa11y": "npm run pa11y:collect && npm run format",
     "pa11y:report": "pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json",
     "lhci:collect": "lhci collect --config=lhci.config.js",

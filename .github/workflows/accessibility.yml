@@ -1,0 +1,37 @@
+name: Accessibility Test with Pa11y
+
+on:
+  pull_request:
+    branches:
+      - development-testing  # Trigger on pull request to `development-testing`
+  push:
+    branches:
+      - development-testing  # Trigger on push to `development-testing`
+
+jobs:
+  pa11y:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run Pa11y accessibility tests
+        run: |
+          npx pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json
+
+      - name: Check for Pa11y errors
+        run: |
+          if grep -q '"type": "error"' accessibility-report.json; then
+            echo "Accessibility errors found!";
+            exit 1;
+          fi

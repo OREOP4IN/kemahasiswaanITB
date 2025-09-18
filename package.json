@@ -1,6 +1,9 @@
 {
   "devDependencies": {
-    "pa11y-ci": "^4.0.1"
+    "pa11y-ci": "^4.0.1",
+    "puppeteer": "^22.15.0",
+    "chalk": "^5.3.0",
+    "globby": "^14.0.2"
   },
   "scripts": {
     "test:accessibility": "pa11y-ci --config ./a11y-tooling/pa11yci.json --reporter json > ./a11y-tooling/a11y-reports/pa11y-report.json",

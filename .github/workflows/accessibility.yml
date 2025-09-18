@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Pa11y accessibility tests
         run: |
-          npx pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json
+          npm run test:accessibility
 
       - name: Check for Pa11y errors
         run: |

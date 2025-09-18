@@ -3,7 +3,8 @@
     "pa11y-ci": "^4.0.1"
   },
   "scripts": {
-    "test:accessibility": "pa11y-ci --config pa11yci.json --reporter json > accessibility-report.json"
+    "scripts": {
+      "test:accessibility": "pa11y-ci --config ./a11y-tooling/pa11yci.json --reporter json > reports/pa11y-report.json && npx prettier --write reports/pa11y-report.json"
   },
   "dependencies": {
     "fs": "^0.0.1-security",

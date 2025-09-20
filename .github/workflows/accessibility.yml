@@ -3,10 +3,10 @@ name: Accessibility Audit
 on:
   push:
     branches:
-      - main
+      - development-testing
   pull_request:
     branches:
-      - main
+      - development-testing
 
 jobs:
   accessibility:

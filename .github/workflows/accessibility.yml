@@ -31,33 +31,20 @@ jobs:
             wget \
             ca-certificates \
             fonts-liberation \
-            libappindicator3-1 \
-            libasound2 \
+            libnss3 \
+            lsb-release \
+            xdg-utils \
             libx11-xcb1 \
             libxcomposite1 \
             libxdamage1 \
             libxrandr2 \
-            xdg-utils \
-            libu2f-udev \
-            libnss3 \
-            lsb-release \
-            xdg-utils \
-            fonts-dejavu \
-            libgdk-pixbuf2.0-0 \
-            libnspr4 \
-            libatk-bridge2.0-0 \
-            libatk1.0-0 \
-            libxss1 \
             libgbm1 \
-            libpangocairo-1.0-0 \
-            libpango-1.0-0 \
-            libgdk-pixbuf2.0-0 \
+            libatk1.0-0 \
             libatk-bridge2.0-0 \
-            libgdk-pixbuf2.0-0 \
-            libnss3 \
-            fonts-liberation \
-            libappindicator3-1 \
-            libasound2
+            libgtk-3-0 \
+            libxss1 \
+            libpangocairo-1.0-0 \
+            libpango-1.0-0
 
       - name: Run Pa11y CI accessibility test
         run: npm run test:accessibility

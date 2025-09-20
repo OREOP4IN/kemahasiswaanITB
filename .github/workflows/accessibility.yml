@@ -1,37 +1,72 @@
-name: Accessibility Test with Pa11y
+name: Accessibility Audit
 
 on:
-  pull_request:
-    branches:
-      - development-testing  # Trigger on pull request to `development-testing`
   push:
     branches:
-      - development-testing  # Trigger on push to `development-testing`
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  pa11y:
-    runs-on: ubuntu-latest
+  accessibility:
+    runs-on: ubuntu-latest  # Use Ubuntu CI environment
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '22'
 
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
 
-      - name: Run Pa11y accessibility tests
+      - name: Install Puppeteer dependencies
         run: |
-          npm run test:accessibility
+          sudo apt-get update
+          sudo apt-get install -y \
+            wget \
+            ca-certificates \
+            fonts-liberation \
+            libappindicator3-1 \
+            libasound2 \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            xdg-utils \
+            libu2f-udev \
+            libnss3 \
+            lsb-release \
+            xdg-utils \
+            fonts-dejavu \
+            libgdk-pixbuf2.0-0 \
+            libnspr4 \
+            libatk-bridge2.0-0 \
+            libatk1.0-0 \
+            libxss1 \
+            libgbm1 \
+            libpangocairo-1.0-0 \
+            libpango-1.0-0 \
+            libgdk-pixbuf2.0-0 \
+            libatk-bridge2.0-0 \
+            libgdk-pixbuf2.0-0 \
+            libnss3 \
+            fonts-liberation \
+            libappindicator3-1 \
+            libasound2
 
-      - name: Check for Pa11y errors
+      - name: Run Pa11y CI accessibility test
+        run: npm run test:accessibility
+
+      - name: Fail job if Pa11y finds errors
         run: |
-          if grep -q '"type": "error"' accessibility-report.json; then
-            echo "Accessibility errors found!";
-            exit 1;
+          if grep -q '"type": "error"' reports/pa11y-report.json; then
+            echo "Pa11y found accessibility errors. Failing the job."
+            exit 1
+          else
+            echo "No Pa11y accessibility errors found. Proceeding."
           fi

@@ -95,17 +95,19 @@ jobs:
           curl -i "http://${HOST}:${PORT}/__health.php"
 
       # Now hit your real homepage; if this 500s, we’ll print the log
-      - name: Smoke: homepage
+      - name: "Smoke: homepage"
         run: |
           code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/")
           echo "HTTP / => $code"
           if [ "$code" != "200" ]; then
-            echo "==== php-server.log ====" && (cat php-server.log || true)
+            echo "==== php-server.log ===="
+            cat php-server.log || true
             exit 1
           fi
 
+
       # Optional: add more routes to assert
-      - name: Smoke: static file (optional)
+      - name: "Smoke: static file (optional)""
         run: |
           curl -sSf "http://${HOST}:${PORT}/favicon.ico" >/dev/null || true
 

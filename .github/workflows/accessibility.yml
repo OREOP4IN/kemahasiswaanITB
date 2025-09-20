@@ -13,21 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout code
+      # Checkout code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Set up Node.js
+      # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22'
 
-      # 3️⃣ Install project dependencies
+      # Install project dependencies
       - name: Install NPM dependencies
         run: npm install
 
-      # 4️⃣ Install Puppeteer system dependencies
+      # Install Puppeteer system dependencies
       - name: Install Puppeteer dependencies
         run: |
           sudo apt-get update
@@ -50,25 +50,33 @@ jobs:
             libpangocairo-1.0-0 \
             libpango-1.0-0
 
-      # 5️⃣ Ensure reports directory exists
+      # Ensure reports directory exists
       - name: Prepare reports folder
         run: mkdir -p ./a11y-tooling/a11y-reports
 
-      # 6️⃣ Start PHP server for CodeIgniter
-      - name: Start PHP server
-        run: php -S 127.0.0.1:8000 -t ./ &
+      # Start PHP server for CodeIgniter
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3.6'
 
-      # 7️⃣ Wait for the server to be ready
+      - name: Check PHP version
+        run: php -v
+
+      - name: Start PHP server
+        run: php -S 127.0.0.1:8000 router.php &
+
+      # Wait for the server to be ready
       - name: Wait for server
         run: npx wait-on http://127.0.0.1:8000
 
-      # 8️⃣ Run Pa11y CI accessibility test
+      # Run Pa11y CI accessibility test
       - name: Run Pa11y CI
         run: npm run test:accessibility
         env:
           NODE_ENV: ci
 
-      # 9️⃣ Fail job if Pa11y finds errors
+      # Fail job if Pa11y finds errors
       - name: Fail job on accessibility errors
         run: |
           if grep -q '"type": "error"' ./a11y-tooling/a11y-reports/pa11y-report.json; then
@@ -78,7 +86,7 @@ jobs:
             echo "✅ No Pa11y accessibility errors found. Proceeding."
           fi
 
-      # 🔟 Upload JSON report as artifact
+      # Upload JSON report as artifact
       - name: Upload accessibility report
         uses: actions/upload-artifact@v4
         with:

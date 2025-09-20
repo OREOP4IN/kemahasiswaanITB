@@ -1,16 +1,15 @@
-name: CI — PHP router.php + Node
+name: CI — PHP router.php + Node (debug)
 
 on:
   push:
-    branches:
-      - development-testing
+    branches: [ main, development-testing ]
   pull_request:
-    branches:
-      - development-testing
+  workflow_dispatch:
 
 env:
-  PHP_SERVER_HOST: 127.0.0.1
-  PHP_SERVER_PORT: 8080
+  HOST: 127.0.0.1
+  PORT: 8080
+  DOCROOT: .            # router.php & index.php live in repo root; change if needed
 
 jobs:
   build-and-test:
@@ -20,71 +19,107 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Node for frontend assets
+      # --- Node build (optional) ---
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install JS dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+      - name: Install JS deps
+        run: npm ci || npm install
 
       - name: Build (optional)
         run: npm run build --if-present
 
-      # PHP (no Composer)
-      - name: Set up PHP 8.2
+      # --- PHP setup ---
+      - name: Set up PHP 8.2 + common extensions
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           coverage: none
-          extensions: curl, mbstring, intl
+          # add likely-needed extensions for WAMP parity
+          extensions: mbstring, intl, curl, pdo, pdo_mysql, fileinfo, gd, openssl
+          ini-values: |
+            error_reporting=E_ALL
+            display_errors=1
+            log_errors=1
+            html_errors=0
+            date.timezone=UTC
 
-      # Start PHP built-in server from repo root using your router.php
-      - name: Start PHP server (router.php at repo root)
+      # Lint critical entry points early (fast fail with clear message)
+      - name: Lint router and entry
         run: |
-          nohup php -S ${PHP_SERVER_HOST}:${PHP_SERVER_PORT} -t . router.php > php-server.log 2>&1 &
+          php -v
+          php -l router.php
+          # If your front controller is index.php or public/index.php, lint it too:
+          [ -f index.php ] && php -l index.php || true
+          [ -f public/index.php ] && php -l public/index.php || true
 
-      # Wait until the server is ready
+      # Drop a temporary health file so we can distinguish server vs app errors
+      - name: Write health probe
+        run: |
+          cat > __health.php <<'PHP'
+          <?php
+          header('Content-Type: application/json');
+          echo json_encode([
+            "ok" => true,
+            "php" => PHP_VERSION,
+            "sapi" => PHP_SAPI,
+            "extensions" => get_loaded_extensions()
+          ]);
+          PHP
+
+      # If your router expects to be in its own directory, normalize CWD
+      - name: Start PHP built-in server
+        env:
+          XDEBUG_MODE: off
+        run: |
+          nohup php -S ${HOST}:${PORT} -t "${DOCROOT}" router.php > php-server.log 2>&1 &
+
       - name: Wait for server
         run: |
           for i in {1..20}; do
-            if curl -sSf "http://${PHP_SERVER_HOST}:${PHP_SERVER_PORT}/" >/dev/null; then
+            if curl -sSf "http://${HOST}:${PORT}/__health.php" >/dev/null; then
               echo "Server is up"; exit 0
             fi
             sleep 1
           done
           echo "Server failed to start."
-          echo "==== php-server.log ===="
-          cat php-server.log || true
+          echo "==== php-server.log ====" && (cat php-server.log || true)
           exit 1
 
-      # Simple smoke test — add more routes as needed
-      - name: Smoke tests
+      # Hit the health probe (should be 200)
+      - name: Probe built-in server
         run: |
-          base="http://${PHP_SERVER_HOST}:${PHP_SERVER_PORT}"
-          test "$(curl -s -o /dev/null -w "%{http_code}" "$base/")" = "200"
+          curl -i "http://${HOST}:${PORT}/__health.php"
+
+      # Now hit your real homepage; if this 500s, we’ll print the log
+      - name: Smoke: homepage
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/")
+          echo "HTTP / => $code"
+          if [ "$code" != "200" ]; then
+            echo "==== php-server.log ====" && (cat php-server.log || true)
+            exit 1
+          fi
+
+      # Optional: add more routes to assert
+      - name: Smoke: static file (optional)
+        run: |
+          curl -sSf "http://${HOST}:${PORT}/favicon.ico" >/dev/null || true
+
+      # Cleanup temp file
+      - name: Cleanup health probe
+        if: always()
+        run: rm -f __health.php
 
       # JS tests, if any
       - name: Run JS tests (optional)
         run: npm test --if-present
 
-      # Keep built assets (optional)
-      - name: Upload dist (optional)
-        if: success() && hashFiles('dist/**') != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: web-dist
-          path: dist
-
-      # Upload server log on failure (helps debugging)
-      - name: Upload server log (on failure)
+      # Upload server log on failure for debugging
+      - name: Upload php-server.log (on failure)
         if: failure()
         uses: actions/upload-artifact@v4
         with:

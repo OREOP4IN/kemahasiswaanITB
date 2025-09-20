@@ -58,7 +58,6 @@ jobs:
       - name: Run Pa11y CI
         run: npm run test:accessibility
         env:
-          PUPPETEER_EXECUTABLE_PATH: "/usr/bin/google-chrome" # optional if using system Chrome
           NODE_ENV: "ci"
 
       # 7️⃣ Fail job if Pa11y finds errors

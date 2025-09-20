@@ -73,7 +73,7 @@ jobs:
 
       # 8️⃣ Upload JSON report as artifact (optional)
       - name: Upload accessibility report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pa11y-report
           path: ./a11y-tooling/a11y-reports/pa11y-report.json

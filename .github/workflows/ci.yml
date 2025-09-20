@@ -107,7 +107,7 @@ jobs:
 
 
       # Optional: add more routes to assert
-      - name: "Smoke: static file (optional)""
+      - name: "Smoke: static file (optional)"
         run: |
           curl -sSf "http://${HOST}:${PORT}/favicon.ico" >/dev/null || true
 

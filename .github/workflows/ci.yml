@@ -1,12 +1,14 @@
-name: CI — PHP (router.php) + Node
+name: CI — PHP router.php + Node
 
 on:
   push:
-    branches: [ main, development-testing ]
+    branches:
+      - development-testing
   pull_request:
+    branches:
+      - development-testing
 
 env:
-  DOCROOT: public            # ← change if your web root is different
   PHP_SERVER_HOST: 127.0.0.1
   PHP_SERVER_PORT: 8080
 
@@ -18,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Node for your frontend pipeline
+      # Node for frontend assets
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
@@ -36,7 +38,7 @@ jobs:
       - name: Build (optional)
         run: npm run build --if-present
 
-      # PHP (no Composer needed)
+      # PHP (no Composer)
       - name: Set up PHP 8.2
         uses: shivammathur/setup-php@v2
         with:
@@ -44,12 +46,10 @@ jobs:
           coverage: none
           extensions: curl, mbstring, intl
 
-      # Start PHP built-in server with your router.php
-      - name: Start PHP server
+      # Start PHP built-in server from repo root using your router.php
+      - name: Start PHP server (router.php at repo root)
         run: |
-          cd "$DOCROOT"
-          nohup php -S ${PHP_SERVER_HOST}:${PHP_SERVER_PORT} router.php > ../php-server.log 2>&1 &
-          cd -
+          nohup php -S ${PHP_SERVER_HOST}:${PHP_SERVER_PORT} -t . router.php > php-server.log 2>&1 &
 
       # Wait until the server is ready
       - name: Wait for server
@@ -65,21 +65,28 @@ jobs:
           cat php-server.log || true
           exit 1
 
-      # Super-basic smoke test — adjust paths as needed
+      # Simple smoke test — add more routes as needed
       - name: Smoke tests
         run: |
-          status=$(curl -s -o /dev/null -w "%{http_code}" "http://${PHP_SERVER_HOST}:${PHP_SERVER_PORT}/")
-          echo "HTTP status: $status"
-          test "$status" = "200"
+          base="http://${PHP_SERVER_HOST}:${PHP_SERVER_PORT}"
+          test "$(curl -s -o /dev/null -w "%{http_code}" "$base/")" = "200"
 
-      # If you have JS tests
+      # JS tests, if any
       - name: Run JS tests (optional)
         run: npm test --if-present
 
-      # Keep your built assets as an artifact (optional)
-      - name: Upload built assets (optional)
+      # Keep built assets (optional)
+      - name: Upload dist (optional)
         if: success() && hashFiles('dist/**') != ''
         uses: actions/upload-artifact@v4
         with:
           name: web-dist
           path: dist
+
+      # Upload server log on failure (helps debugging)
+      - name: Upload server log (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: php-server-log
+          path: php-server.log

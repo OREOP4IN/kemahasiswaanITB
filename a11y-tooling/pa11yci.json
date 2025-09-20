@@ -8,10 +8,12 @@
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-gpu",
-      "--headless"
+      "--headless",
+      "--disable-dev-shm-usage",
+      "--disable-software-rasterizer"
     ]
   },
   "urls": [
-    "http://kemahasiswaan.itb/"
+    "http://127.0.0.1:8000/"
   ]
 }

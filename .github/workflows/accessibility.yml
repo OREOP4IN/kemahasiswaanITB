@@ -17,8 +17,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Setup Node.js
-      - name: Set up Node.js
+      # 2️⃣ Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22'
@@ -27,23 +27,48 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - name: Install pa11y
-        run: npm install -g pa11y-ci
+      # 4️⃣ Install Puppeteer system dependencies
+      - name: Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            wget \
+            ca-certificates \
+            fonts-liberation \
+            libnss3 \
+            lsb-release \
+            xdg-utils \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libgbm1 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libgtk-3-0 \
+            libxss1 \
+            libpangocairo-1.0-0 \
+            libpango-1.0-0
 
-      - name: Install pa11y
-        run: sudo apt-get install chromium-browser
-        
       # 5️⃣ Ensure reports directory exists
       - name: Prepare reports folder
         run: mkdir -p ./a11y-tooling/a11y-reports
 
-      # 6️⃣ Run Pa11y CI accessibility test
+      # 6️⃣ Start PHP server for CodeIgniter
+      - name: Start PHP server
+        run: php -S 127.0.0.1:8000 -t ./ &
+
+      # 7️⃣ Wait for the server to be ready
+      - name: Wait for server
+        run: npx wait-on http://127.0.0.1:8000
+
+      # 8️⃣ Run Pa11y CI accessibility test
       - name: Run Pa11y CI
         run: npm run test:accessibility
         env:
-          NODE_ENV: "ci"
+          NODE_ENV: ci
 
-      # 7️⃣ Fail job if Pa11y finds errors
+      # 9️⃣ Fail job if Pa11y finds errors
       - name: Fail job on accessibility errors
         run: |
           if grep -q '"type": "error"' ./a11y-tooling/a11y-reports/pa11y-report.json; then
@@ -53,7 +78,7 @@ jobs:
             echo "✅ No Pa11y accessibility errors found. Proceeding."
           fi
 
-      # 8️⃣ Upload JSON report as artifact (optional)
+      # 🔟 Upload JSON report as artifact
       - name: Upload accessibility report
         uses: actions/upload-artifact@v4
         with:

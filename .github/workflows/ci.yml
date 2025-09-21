@@ -105,6 +105,19 @@ jobs:
           echo "==== php-server.log ====" && (cat php-server.log || true)
           exit 1
 
+      - name: Wait for server
+        run: |
+          for i in {1..30}; do
+            if curl -s "http://${HOST}:${PORT}/ewlwjdoiwajoidwajo" >/dev/null 2>&1; then
+              echo "Server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server failed to start."
+          echo "==== php-server.log ====" && (cat php-server.log || true)
+          exit 1
+
       # Hit the health probe (should be 200)
       - name: Probe built-in server
         run: |

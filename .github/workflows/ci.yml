@@ -29,9 +29,6 @@ jobs:
       - name: Install JS deps
         run: npm ci || npm install
 
-      - name: Build (optional)
-        run: npm run build --if-present
-
       # --- PHP setup ---
       - name: Set up PHP 8.2 + common extensions
         uses: shivammathur/setup-php@v2
@@ -122,6 +119,10 @@ jobs:
       - name: Probe built-in server
         run: |
           curl -i "http://${HOST}:${PORT}/__health.php"
+
+      - name: Probe built-in server
+        run: |
+          curl -i "http://${HOST}:${PORT}/beranda"
 
       # Now hit your real homepage; if this 500s, we’ll print the log
       - name: "Smoke: homepage"

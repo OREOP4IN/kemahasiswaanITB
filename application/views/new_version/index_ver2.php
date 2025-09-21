@@ -13,8 +13,34 @@
                     }
     }
 
-    .slideditmawa{
+    .slideditmawa {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Filter only on the background image via pseudo-element */
+    .slideditmawa::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: inherit; /* uses the inline URL */
+        background-size: cover;
+        background-position: center;
         filter: sepia(100%) hue-rotate(160deg) saturate(300%);
+        z-index: 0;
+    }
+
+    /* Title stays above the filtered background */
+    .slide-banner--title {
+        position: relative;
+        z-index: 1;
+        background-color: #1589EF;
+        padding: 5px 15px;
+        border-radius: 10px;
+        display: inline-block;
+        color: #fff; /* optional, make text visible */
     }
 
 
@@ -39,7 +65,7 @@
 
                     <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title" style="background-color: grey; padding: 5px; border-radius: 10px;"><b> <?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
+                        <div class="slide-banner--title"><b> <?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
                      </div>
                     </a>
 
@@ -47,7 +73,7 @@
 
                     <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title" style="background-color: grey;padding: 5px; border-radius: 10px;"><b><?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
+                        <div class="slide-banner--title"><b><?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
                      </div>
                     </a>
                     
@@ -63,7 +89,7 @@
 
                     <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= $hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title" style="background-color: grey; padding: 5px; border-radius: 10px;"><b> <?= $hl->judul ?></b></div>
+                        <div class="slide-banner--title"><b><?= $hl->judul ?></b></div>
                      </div>
                     </a>
 
@@ -71,7 +97,7 @@
 
                     <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= $hl->judul ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title" style="background-color: grey;padding: 5px; border-radius: 10px;"><b><?= $hl->judul ?></b></div>
+                        <div class="slide-banner--title"><b><?= $hl->judul ?></b></div>
                      </div>
                     </a>
                     

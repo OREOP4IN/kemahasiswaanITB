@@ -175,6 +175,7 @@ jobs:
       - name: Start PHP built-in server
         env:
           XDEBUG_MODE: off
+          CI_ENV: testing 
         run: |
           nohup php -S ${HOST}:${PORT} -t "${DOCROOT}" router.php > php-server.log 2>&1 &
           sleep 0.5

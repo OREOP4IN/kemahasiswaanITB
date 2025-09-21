@@ -200,8 +200,105 @@ jobs:
       - name: "Probe: __routes.php (first 200 lines)"
         run: curl -s "http://${HOST}:${PORT}/__routes.php" | sed -n '1,200p'
 
-      - name: "Probe: __ls.php (first 200 lines)"
+      - name: "Probe: __ls.php"
         run: curl -s "http://${HOST}:${PORT}/__ls.php"
+
+      - name: "Fetch __ls.php JSON"
+        run: |
+          curl -s "http://${HOST}:${PORT}/__ls.php" -o ls.json
+          jq -r '."count" as $c | "Discovered \($c) items"' ls.json || true
+
+      - name: "Generate file inventory report"
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq
+
+          # 1) Basic totals
+          total=$(jq '.count' ls.json)
+          files=$(jq '[.files[] | select(.type=="file")] | length' ls.json)
+          dirs=$(jq '[.files[] | select(.type=="dir")] | length' ls.json)
+
+          # 2) Counts by top-level directory (sorted desc)
+          jq -r '
+            .files[]
+            | select(.type=="file")
+            | (.path | split("/")[0]) as $top
+            | {top:$top}
+            ' ls.json \
+          | jq -s '
+              group_by(.top)
+              | map({top: .[0].top, count: length})
+              | sort_by(-.count)
+            ' > by_top.json
+
+          # 3) Language/asset breakdown
+          jq -r '
+            .files[]
+            | select(.type=="file")
+            | .path as $p
+            | ( $p | (.[-4:] // "") ) as $ext4
+            | ( $p | (.[-3:] // "") ) as $ext3
+            | if ($ext4|test("\\.php$")) then "php"
+              elif ($ext3|test("\\.js$")) then "js"
+              elif ($ext3|test("\\.ts$")) then "ts"
+              elif ($ext3|test("\\.css$")) then "css"
+              elif ($ext3|test("\\.md$")) then "md"
+              elif ($ext3|test("\\.sh$")) then "sh"
+              elif ($p | test("\\.(png|jpg|jpeg|gif|svg|webp)$")) then "images"
+              else "other" end
+          ' ls.json \
+          | jq -s 'group_by(.) | map({type: .[0], count: length}) | sort_by(-.count)' > by_type.json
+
+          # 4) Largest 20 files
+          jq -r '
+            .files[]
+            | select(.type=="file")
+            | {path, size}
+          ' ls.json \
+          | jq -s 'sort_by(-.size)[:20]' > largest.json
+
+          # 5) Build Markdown
+          {
+            echo "# Repository File Inventory (from __ls.php)"
+            echo
+            echo "- **Total items**: ${total}"
+            echo "- **Files**: ${files}"
+            echo "- **Directories**: ${dirs}"
+            echo
+            echo "## Top-level Directories (by file count)"
+            echo
+            echo "| Directory | Files |"
+            echo "|---|---:|"
+            jq -r '.[] | "| \(.top) | \(.count) |"' by_top.json
+            echo
+            echo "## File Types"
+            echo
+            echo "| Type | Count |"
+            echo "|---|---:|"
+            jq -r '.[] | "| \(.type) | \(.count) |"' by_type.json
+            echo
+            echo "## Largest 20 Files"
+            echo
+            echo "| File | Size (bytes) |"
+            echo "|---|---:|"
+            jq -r '.[] | "| \(.path) | \(.size // 0) |"' largest.json
+            echo
+            echo "_Generated from \`__ls.php\` on $(date -u +"%Y-%m-%d %H:%M:%S") UTC_"
+          } > inventory-report.md
+
+      - name: "Publish inventory to Job Summary"
+        run: cat inventory-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: "Upload inventory artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          name: inventory-from-ls
+          path: |
+            ls.json
+            by_top.json
+            by_type.json
+            largest.json
+            inventory-report.md
+
 
       - name: Probe beranda
         run: |

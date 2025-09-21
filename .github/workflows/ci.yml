@@ -8,7 +8,7 @@ on:
 
 env:
   HOST: 127.0.0.1
-  PORT: 8080
+  PORT: 8000
   DOCROOT: .            # router.php & index.php live in repo root; change if needed
 
 jobs:

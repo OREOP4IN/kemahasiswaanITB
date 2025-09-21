@@ -100,7 +100,6 @@ jobs:
           cat > __ls.php <<'PHP'
           <?php
           define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
-          if (ENVIRONMENT !== 'testing') { http_response_code(403); exit('Forbidden'); }
           $root = realpath(__DIR__);
           $ignoreTop = ['.git','node_modules','vendor','.github','.gitignore','php-server.log','php-error.log'];
           $out = [];
@@ -122,7 +121,6 @@ jobs:
           cat > __routes.php <<'PHP'
           <?php
           define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
-          if (ENVIRONMENT !== 'testing') { http_response_code(403); exit('Forbidden'); }
           $base = __DIR__;
           $routesFiles = [
             "$base/application/config/routes.php",

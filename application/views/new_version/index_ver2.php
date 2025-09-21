@@ -36,7 +36,7 @@
     .slide-banner--title {
         position: relative;
         z-index: 1;
-        background-color: #1589EF;
+        background-color: #0F77D2;
         padding: 5px 15px;
         border-radius: 10px;
         display: inline-block;

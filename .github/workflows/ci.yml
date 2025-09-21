@@ -10,6 +10,7 @@ env:
   HOST: 127.0.0.1
   PORT: 8000
   DOCROOT: .            # router.php & index.php live in repo root; change if needed
+  CI_ENV: testing       # CodeIgniter reads this to set ENVIRONMENT
 
 jobs:
   build-and-test:
@@ -30,19 +31,20 @@ jobs:
         run: npm ci || npm install
 
       # --- PHP setup ---
-      - name: Set up PHP 8.2 + common extensions
+      - name: "Set up PHP 8.2 + extensions"
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           coverage: none
-          # add likely-needed extensions for WAMP parity
-          extensions: mbstring, intl, curl, pdo, pdo_mysql, fileinfo, gd, openssl
+          extensions: mbstring, intl, curl, pdo, pdo_mysql, mysqli, fileinfo, gd, openssl
           ini-values: |
             error_reporting=E_ALL
             display_errors=1
             log_errors=1
             html_errors=0
             date.timezone=UTC
+            short_open_tag=1
+            error_log=php-error.log
 
       # Lint critical entry points early (fast fail with clear message)
       - name: Lint router and entry
@@ -123,6 +125,12 @@ jobs:
       - name: Probe built-in server
         run: |
           curl -i "http://${HOST}:${PORT}/beranda"
+
+      - name: "Smoke: health"
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/__health.php")
+          echo "HTTP /__health.php => $code"
+          test "$code" = "200"
 
       # Now hit your real homepage; if this 500s, we’ll print the log
       - name: "Smoke: homepage"

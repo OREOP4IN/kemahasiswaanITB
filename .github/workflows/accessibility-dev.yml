@@ -85,35 +85,6 @@ jobs:
         run: |
           mysql -h 127.0.0.1 -P 3306 -uci -pci app < db/database.sql
 
-      - name: Peek DB contents
-        run: |
-          mysql -h 127.0.0.1 -P 3306 -uci -pci -e "SHOW DATABASES;"
-          mysql -h 127.0.0.1 -P 3306 -uci -pci -D app -e "SHOW TABLES;"
-          # sample row counts for key tables (change names)
-          for t in users posts sessions; do
-            mysql -h 127.0.0.1 -P 3306 -uci -pci -D app -e "SELECT '$t' AS table_name, COUNT(*) AS rows FROM \`$t\` LIMIT 1;" || true
-          done
-
-      - name: Lint critical entry points - router and entry
-        run: |
-          php -v
-          php -l router.php
-          [ -f index.php ] && php -l index.php || true
-
-      # Drop a temporary health file so we can distinguish server vs app errors
-      - name: Write health probe
-        run: |
-          cat > __health.php <<'PHP'
-          <?php
-          header('Content-Type: application/json');
-          echo json_encode([
-            "ok" => true,
-            "php" => PHP_VERSION,
-            "sapi" => PHP_SAPI,
-            "extensions" => get_loaded_extensions()
-          ]);
-          PHP
-
       - name: Start PHP built-in server
         env:
           XDEBUG_MODE: off
@@ -122,23 +93,6 @@ jobs:
           nohup php -S ${HOST}:${PORT} -t "${DOCROOT}" router.php > php-server.log 2>&1 &
           sleep 0.5
           pgrep -fa "php -S" || { echo "PHP server not running"; cat php-server.log || true; exit 1; }
-
-      - name: Wait for server
-        run: |
-          for i in {1..30}; do
-            if curl -s "http://${HOST}:${PORT}/__health.php" >/dev/null 2>&1; then
-              echo "Server is up"
-              exit 0
-            fi
-            sleep 1
-          done
-          echo "Server failed to start."
-          echo "==== php-server.log ====" && (cat php-server.log || true)
-          exit 1
-
-      - name: Probe built-in server
-        run: |
-          curl -i "http://${HOST}:${PORT}/__health.php"
 
       # --- PA11Y CI ---
 
@@ -161,13 +115,15 @@ jobs:
               echo "Pa11y exit code: $? - homepage"
           fi
 
-      - name: Verify Pa11y report presence
+      # Format with Prettier
+      - name: Format Pa11y JSON
         run: |
-          test -s ./a11y-tooling/a11y-reports/pa11y-report.json || {
-            echo "Pa11y did not create a report. Likely config/URL problem."
-            echo "Tip: ensure pa11yci.json has valid 'urls' pointing to http://${HOST}:${PORT}/..."
-            exit 2
-          }
+          test -s ./a11y-tooling/a11y-reports/pa11y-report.json || { echo "No report found"; exit 2; }
+          npm run format
+
+      # Print the entire (pretty) JSON to logs — no line limit
+      - name: Show Pa11y JSON (full)
+        run: cat ./a11y-tooling/a11y-reports/pa11y-report.json
 
       # --- Fail job only on accessibility errors in the JSON ---
       - name: Fail job on accessibility errors

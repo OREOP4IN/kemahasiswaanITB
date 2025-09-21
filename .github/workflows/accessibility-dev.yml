@@ -157,21 +157,67 @@ jobs:
             exit 1
           fi
 
-      # Run Pa11y CI accessibility test
+      # --- Make sure Chrome deps are present for Pa11y/Puppeteer ---
+      - name: Install Chrome deps for Pa11y
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ca-certificates fonts-liberation libnss3 xdg-utils \
+            libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 libgbm1 \
+            libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0
+
+      # --- Sanity: server must be up before running Pa11y ---
+      - name: Check health before Pa11y
+        run: |
+          curl -sSf "http://${HOST}:${PORT}/__health.php" >/dev/null
+          echo "Server OK at http://${HOST}:${PORT}"
+
+      # --- Ensure reports folder exists ---
+      - name: Prepare a11y report folder
+        run: mkdir -p ./a11y-tooling/a11y-reports
+
+      # --- Run Pa11y (don’t fail here; we’ll parse the JSON next) ---
       - name: Run Pa11y CI
-        run: npm run test:accessibility
+        continue-on-error: true
         env:
           NODE_ENV: ci
+        run: |
+          if [ -f ./a11y-tooling/pa11yci.json ]; then
+            npx pa11y-ci --config ./a11y-tooling/pa11yci.json --reporter json \
+              > ./a11y-tooling/a11y-reports/pa11y-report.json
+          else
+            # Fallback: hit homepage so we always produce a report file
+            npx pa11y-ci --sitemap "http://${HOST}:${PORT}/" --reporter json \
+              > ./a11y-tooling/a11y-reports/pa11y-report.json
+          fi
+          echo "Pa11y exit code: $?"
 
-      # Fail job if Pa11y finds errors
+      # --- If Pa11y didn't produce a file, surface logs & fail clearly ---
+      - name: Verify Pa11y report presence
+        run: |
+          test -s ./a11y-tooling/a11y-reports/pa11y-report.json || {
+            echo "Pa11y did not create a report. Likely config/URL problem."
+            echo "Tip: ensure pa11yci.json has valid 'urls' pointing to http://${HOST}:${PORT}/..."
+            exit 2
+          }
+
+      # --- Fail job only on accessibility errors in the JSON ---
       - name: Fail job on accessibility errors
         run: |
           if grep -q '"type": "error"' ./a11y-tooling/a11y-reports/pa11y-report.json; then
             echo "❌ Pa11y found accessibility errors. Failing the job."
+            sed -n '1,200p' ./a11y-tooling/a11y-reports/pa11y-report.json || true
             exit 1
           else
-            echo "✅ No Pa11y accessibility errors found. Proceeding."
+            echo "✅ No Pa11y accessibility errors found."
           fi
+
+      # --- Keep the JSON as an artifact for inspection (optional) ---
+      - name: Upload Pa11y report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pa11y-report
+          path: ./a11y-tooling/a11y-reports/pa11y-report.json
 
       # Cleanup temp file
       - name: "Cleanup debug endpoints"

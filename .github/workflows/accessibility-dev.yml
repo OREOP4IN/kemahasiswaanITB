@@ -48,6 +48,15 @@ jobs:
       - name: Install JS deps
         run: npm ci || npm install
 
+      # --- Make sure Chrome deps are present for Pa11y/Puppeteer ---
+      - name: Install Chrome deps for Pa11y
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ca-certificates fonts-liberation libnss3 xdg-utils \
+            libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 libgbm1 \
+            libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0
+
       # --- PHP setup ---
       - name: "Set up PHP 8.2 + extensions"
         uses: shivammathur/setup-php@v2
@@ -157,21 +166,6 @@ jobs:
             exit 1
           fi
 
-      # --- Make sure Chrome deps are present for Pa11y/Puppeteer ---
-      - name: Install Chrome deps for Pa11y
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            ca-certificates fonts-liberation libnss3 xdg-utils \
-            libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 libgbm1 \
-            libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0
-
-      # --- Sanity: server must be up before running Pa11y ---
-      - name: Check health before Pa11y
-        run: |
-          curl -sSf "http://${HOST}:${PORT}/__health.php" >/dev/null
-          echo "Server OK at http://${HOST}:${PORT}"
-
       # --- Ensure reports folder exists ---
       - name: Prepare a11y report folder
         run: mkdir -p ./a11y-tooling/a11y-reports
@@ -185,12 +179,13 @@ jobs:
           if [ -f ./a11y-tooling/pa11yci.json ]; then
             npx pa11y-ci --config ./a11y-tooling/pa11yci.json --reporter json \
               > ./a11y-tooling/a11y-reports/pa11y-report.json
+              echo "Pa11y exit code: $? - pa11y"
           else
             # Fallback: hit homepage so we always produce a report file
             npx pa11y-ci --sitemap "http://${HOST}:${PORT}/" --reporter json \
               > ./a11y-tooling/a11y-reports/pa11y-report.json
+              echo "Pa11y exit code: $? - homepage"
           fi
-          echo "Pa11y exit code: $?"
 
       # --- If Pa11y didn't produce a file, surface logs & fail clearly ---
       - name: Verify Pa11y report presence

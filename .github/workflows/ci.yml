@@ -148,13 +148,23 @@ jobs:
         run: |
           curl -i "http://${HOST}:${PORT}/__health.php"
 
-      - name: Probe built-in server
+      - name: Probe index
+        run: |
+          curl -i "http://${HOST}:${PORT}/index.php"
+
+      - name: Probe beranda
         run: |
           curl -i "http://${HOST}:${PORT}/beranda"
 
       - name: "Smoke: health"
         run: |
           code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/__health.php")
+          echo "HTTP /__health.php => $code"
+          test "$code" = "200"
+
+      - name: "Smoke: index"
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/index.php")
           echo "HTTP /__health.php => $code"
           test "$code" = "200"
 

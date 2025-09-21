@@ -157,6 +157,22 @@ jobs:
             exit 1
           fi
 
+      # Run Pa11y CI accessibility test
+      - name: Run Pa11y CI
+        run: npm run test:accessibility
+        env:
+          NODE_ENV: ci
+
+      # Fail job if Pa11y finds errors
+      - name: Fail job on accessibility errors
+        run: |
+          if grep -q '"type": "error"' ./a11y-tooling/a11y-reports/pa11y-report.json; then
+            echo "❌ Pa11y found accessibility errors. Failing the job."
+            exit 1
+          else
+            echo "✅ No Pa11y accessibility errors found. Proceeding."
+          fi
+
       # Cleanup temp file
       - name: "Cleanup debug endpoints"
         if: always()

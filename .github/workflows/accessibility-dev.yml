@@ -9,8 +9,8 @@ on:
 env:
   HOST: 127.0.0.1
   PORT: 8000
-  DOCROOT: .            # router.php & index.php live in repo root; change if needed
-  CI_ENV: testing       # CodeIgniter reads this to set ENVIRONMENT
+  DOCROOT: .
+  CI_ENV: testing
 
 jobs:
   build-and-test:
@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- Node build (optional) ---
+      # --- Node build ---
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
@@ -94,14 +94,11 @@ jobs:
             mysql -h 127.0.0.1 -P 3306 -uci -pci -D app -e "SELECT '$t' AS table_name, COUNT(*) AS rows FROM \`$t\` LIMIT 1;" || true
           done
 
-      # Lint critical entry points early (fast fail with clear message)
-      - name: Lint router and entry
+      - name: Lint critical entry points - router and entry
         run: |
           php -v
           php -l router.php
-          # If your front controller is index.php or public/index.php, lint it too:
           [ -f index.php ] && php -l index.php || true
-          [ -f public/index.php ] && php -l public/index.php || true
 
       # Drop a temporary health file so we can distinguish server vs app errors
       - name: Write health probe
@@ -117,7 +114,6 @@ jobs:
           ]);
           PHP
 
-      # If your router expects to be in its own directory, normalize CWD
       - name: Start PHP built-in server
         env:
           XDEBUG_MODE: off
@@ -140,37 +136,15 @@ jobs:
           echo "==== php-server.log ====" && (cat php-server.log || true)
           exit 1
 
-      # Hit the health probe (should be 200)
       - name: Probe built-in server
         run: |
           curl -i "http://${HOST}:${PORT}/__health.php"
 
-      - name: Probe beranda
-        run: |
-          curl -i "http://${HOST}:${PORT}/beranda"
+      # --- PA11Y CI ---
 
-      - name: "Smoke: health"
-        run: |
-          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/__health.php")
-          echo "HTTP /__health.php => $code"
-          test "$code" = "200"
-
-      # Now hit your real homepage; if this 500s, we’ll print the log
-      - name: "Smoke: homepage"
-        run: |
-          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/")
-          echo "HTTP / => $code"
-          if [ "$code" != "200" ]; then
-            echo "==== php-server.log ===="
-            cat php-server.log || true
-            exit 1
-          fi
-
-      # --- Ensure reports folder exists ---
       - name: Prepare a11y report folder
         run: mkdir -p ./a11y-tooling/a11y-reports
 
-      # --- Run Pa11y (don’t fail here; we’ll parse the JSON next) ---
       - name: Run Pa11y CI
         continue-on-error: true
         env:
@@ -181,13 +155,12 @@ jobs:
               > ./a11y-tooling/a11y-reports/pa11y-report.json
               echo "Pa11y exit code: $? - pa11y"
           else
-            # Fallback: hit homepage so we always produce a report file
+            # Fallback: hit homepage to always produce a report
             npx pa11y-ci --sitemap "http://${HOST}:${PORT}/" --reporter json \
               > ./a11y-tooling/a11y-reports/pa11y-report.json
               echo "Pa11y exit code: $? - homepage"
           fi
 
-      # --- If Pa11y didn't produce a file, surface logs & fail clearly ---
       - name: Verify Pa11y report presence
         run: |
           test -s ./a11y-tooling/a11y-reports/pa11y-report.json || {
@@ -200,14 +173,14 @@ jobs:
       - name: Fail job on accessibility errors
         run: |
           if grep -q '"type": "error"' ./a11y-tooling/a11y-reports/pa11y-report.json; then
-            echo "❌ Pa11y found accessibility errors. Failing the job."
+            echo "Pa11y found accessibility errors. Failing the job."
             sed -n '1,200p' ./a11y-tooling/a11y-reports/pa11y-report.json || true
             exit 1
           else
-            echo "✅ No Pa11y accessibility errors found."
+            echo "No Pa11y accessibility errors found."
           fi
 
-      # --- Keep the JSON as an artifact for inspection (optional) ---
+      # --- Keep the JSON as an artifact for inspection ---
       - name: Upload Pa11y report
         uses: actions/upload-artifact@v4
         with:

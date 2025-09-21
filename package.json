@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test:accessibility": "pa11y-ci --config ./a11y-tooling/pa11yci.json --reporter json > ./a11y-tooling/a11y-reports/pa11y-report.json",
-    "format": "prettier --write ./a11y-tooling/a11y-reports/pa11y-report.json"
+    "format": "prettier --write ./a11y-tooling/a11y-reports/pa11y-report.json",
+    "f": "prettier --write ./pa11y-report.json"
   },
   "dependencies": {
     "fs": "^0.0.1-security",

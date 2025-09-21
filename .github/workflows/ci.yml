@@ -236,11 +236,16 @@ jobs:
           echo "HTTP /__health.php => $code"
           test "$code" = "200"
 
-      - name: "Smoke: index"
+      - name: "Smoke: /package.json"
         run: |
-          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/index.php")
-          echo "HTTP /__health.php => $code"
-          test "$code" = "200"
+          test -f package.json || { echo "package.json not found at repo root (DOCROOT=${DOCROOT})"; exit 1; }
+              code=$(curl -s -o /tmp/p.json -w "%{http_code}" "http://${HOST}:${PORT}/package.json")
+              echo "HTTP /package.json => $code"
+              if [ "$code" != "200" ]; then
+                echo "Body:"; sed -n '1,50p' /tmp/p.json
+                echo "==== php-server.log ===="; cat php-server.log || true
+                exit 1
+              fi
 
       # Now hit your real homepage; if this 500s, we’ll print the log
       - name: "Smoke: homepage"

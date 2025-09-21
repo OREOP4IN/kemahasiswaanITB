@@ -72,6 +72,19 @@ jobs:
           done
           echo "MySQL not ready"; exit 1
 
+      - name: Import schema/data
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -uci -pci app < db/database.sql
+
+      - name: Peek DB contents
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -uci -pci -e "SHOW DATABASES;"
+          mysql -h 127.0.0.1 -P 3306 -uci -pci -D app -e "SHOW TABLES;"
+          # sample row counts for key tables (change names)
+          for t in users posts sessions; do
+            mysql -h 127.0.0.1 -P 3306 -uci -pci -D app -e "SELECT '$t' AS table_name, COUNT(*) AS rows FROM \`$t\` LIMIT 1;" || true
+          done
+
       # Lint critical entry points early (fast fail with clear message)
       - name: Lint router and entry
         run: |

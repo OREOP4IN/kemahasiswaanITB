@@ -76,6 +76,8 @@ jobs:
           XDEBUG_MODE: off
         run: |
           nohup php -S ${HOST}:${PORT} -t "${DOCROOT}" router.php > php-server.log 2>&1 &
+          sleep 0.5
+          pgrep -fa "php -S" || { echo "PHP server not running"; cat php-server.log || true; exit 1; }
 
       - name: Wait for server
         run: |
@@ -89,15 +91,6 @@ jobs:
           echo "Server failed to start."
           echo "==== php-server.log ====" && (cat php-server.log || true)
           exit 1
-
-      - name: Start PHP built-in server
-        env:
-          XDEBUG_MODE: off
-        run: |
-          nohup php -S ${HOST}:${PORT} -t "${DOCROOT}" router.php > php-server.log 2>&1 &
-          sleep 0.5
-          pgrep -fa "php -S" || { echo "PHP server not running"; cat php-server.log || true; exit 1; }
-
 
       # Hit the health probe (should be 200)
       - name: Probe built-in server

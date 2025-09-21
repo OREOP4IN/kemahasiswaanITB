@@ -15,6 +15,24 @@ env:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_DATABASE: app
+          MYSQL_USER: ci
+          MYSQL_PASSWORD: ci
+          MYSQL_ROOT_PASSWORD: root
+        ports: ["3306:3306"]
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uci -pci || exit 1"
+          --health-interval=5s --health-timeout=5s --health-retries=30
+    env:
+      DB_HOST: 127.0.0.1
+      DB_DATABASE: app
+      DB_USERNAME: ci
+      DB_PASSWORD: ci
+      DB_PORT: 3306
 
     steps:
       - name: Checkout
@@ -45,6 +63,14 @@ jobs:
             date.timezone=UTC
             short_open_tag=1
             error_log=php-error.log
+
+      - name: Wait for MySQL
+        run: |
+          for i in {1..60}; do
+            if mysqladmin ping -h 127.0.0.1 -uci -pci --silent; then exit 0; fi
+            sleep 1
+          done
+          echo "MySQL not ready"; exit 1
 
       # Lint critical entry points early (fast fail with clear message)
       - name: Lint router and entry

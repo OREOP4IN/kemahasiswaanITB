@@ -201,7 +201,7 @@ jobs:
         run: curl -s "http://${HOST}:${PORT}/__routes.php" | sed -n '1,200p'
 
       - name: "Probe: __ls.php (first 200 lines)"
-        run: curl -s "http://${HOST}:${PORT}/__ls.php" | sed -n '1,200p'
+        run: curl -s "http://${HOST}:${PORT}/__ls.php"
 
       - name: Probe beranda
         run: |

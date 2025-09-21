@@ -45,6 +45,32 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            wget \
+            ca-certificates \
+            fonts-liberation \
+            libnss3 \
+            lsb-release \
+            xdg-utils \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libgbm1 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libgtk-3-0 \
+            libxss1 \
+            libpangocairo-1.0-0 \
+            libpango-1.0-0
+
+      # Ensure reports directory exists
+      - name: Prepare reports folder
+        run: mkdir -p ./a11y-tooling/a11y-reports
+
       - name: Install JS deps
         run: npm ci || npm install
 

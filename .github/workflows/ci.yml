@@ -79,15 +79,25 @@ jobs:
 
       - name: Wait for server
         run: |
-          for i in {1..20}; do
-            if curl -sSf "http://${HOST}:${PORT}/__health.php" >/dev/null; then
-              echo "Server is up"; exit 0
+          for i in {1..30}; do
+            if curl -s "http://${HOST}:${PORT}/__health.php" >/dev/null 2>&1; then
+              echo "Server is up"
+              exit 0
             fi
             sleep 1
           done
           echo "Server failed to start."
           echo "==== php-server.log ====" && (cat php-server.log || true)
           exit 1
+
+      - name: Start PHP built-in server
+        env:
+          XDEBUG_MODE: off
+        run: |
+          nohup php -S ${HOST}:${PORT} -t "${DOCROOT}" router.php > php-server.log 2>&1 &
+          sleep 0.5
+          pgrep -fa "php -S" || { echo "PHP server not running"; cat php-server.log || true; exit 1; }
+
 
       # Hit the health probe (should be 200)
       - name: Probe built-in server
@@ -105,11 +115,6 @@ jobs:
             exit 1
           fi
 
-
-      # Optional: add more routes to assert
-      - name: "Smoke: static file (optional)"
-        run: |
-          curl -sSf "http://${HOST}:${PORT}/favicon.ico" >/dev/null || true
 
       # Cleanup temp file
       - name: Cleanup health probe

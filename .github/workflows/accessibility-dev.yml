@@ -4,7 +4,7 @@ on:
   push:
     branches: [ development-testing ]
   pull_request:
-    branches: [ development-testing ]
+    branches: [ main, development-testing ]
   workflow_dispatch:
 
 env:

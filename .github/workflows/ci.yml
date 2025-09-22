@@ -2,7 +2,7 @@ name: CI — PHP router.php + Node (debug)
 
 on:
   push:
-    # branches: [ development-testing ] comment out for testing
+     branches: [ development ]
   pull_request:
   workflow_dispatch:
 

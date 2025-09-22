@@ -16,20 +16,28 @@
     .slideditmawa {
         position: relative;
         overflow: hidden;
-        width: 100%;
-        height: 100%;
     }
 
     /* Filter only on the background image via pseudo-element */
     .slideditmawa::before {
         content: "";
         position: absolute;
-        inset: 0;
-        background-image: inherit; /* uses the inline URL */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: inherit;
         background-size: cover;
         background-position: center;
         filter: sepia(100%) hue-rotate(160deg) saturate(300%);
         z-index: 0;
+        pointer-events: none; /* prevent pseudo-element from interfering */
+    }
+
+    .slide-banner--container, .slide-banner {
+        width: 100%;
+        height: auto; /* or a fixed height */
+        overflow: hidden; /* prevent internal scroll */
     }
 
     /* Title stays above the filtered background */

@@ -47,7 +47,7 @@
 
                     <meta name="description" content="Web Direktorat Kemahasiswaan ITB">
                     <meta name="author" content="Informasi & Komunikasi Direktorat Kemahasiswaan ITB">
-                    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta property="og:image" content="<?=base_url().'assets/img/itb.png'?>">
                     <meta name="image" content="<?=base_url().'assets/img/itb.png'?>">
 
@@ -57,7 +57,7 @@
 
         <meta name="description" content="Web Direktorat Kemahasiswaan ITB">
         <meta name="author" content="Informasi & Komunikasi Direktorat Kemahasiswaan ITB">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:image" content="<?=base_url().'assets/img/itb.png'?>">
         <meta name="image" content="<?=base_url().'assets/img/itb.png'?>">
             

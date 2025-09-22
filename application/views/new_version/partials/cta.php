@@ -10,8 +10,8 @@
     <div class="section section-bg section-xxlg" style="padding: 0; padding-top: 1%; padding-bottom: 2%; /*background-image: url('./assets/new_version/images/image-cta-1.png')*/;" >
         <div class="container" style="max-width: 95%;">
             <br>
-            <h4 class="section-title" style="color:white">Video </h4>
-            <div class="row justify-content-center" style="padding: 0px">
+            <h4 class="section-title" style="color:#FFFFFF">Video </h4>
+            <div class="row justify-content-center" style="padding: 0px ">
               <?php foreach ($videoall as $key): ?>
                 <div class="col-md-3 text-center">
                     <hr class="blue">

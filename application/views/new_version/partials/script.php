@@ -2,17 +2,18 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var s,t; s = document.createElement('script'); s.type = 'text/javascript';
-        s.src = 'https://s3-ap-southeast-1.amazonaws.com/qiscus-sdk/public/qismo/qismo-v4.js'; s.async = true;
-        s.onload = s.onreadystatechange = function() { new Qismo('xheop-u1kttqcvsim2wtl', {
-                        options: {
-                            channel_id: 126708,  
-                            extra_fields: [], 
-                        }
-                    }); }
-        t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
-    });
+//     NOTES: disabled qismo 
+//     document.addEventListener('DOMContentLoaded', function() {
+//         var s,t; s = document.createElement('script'); s.type = 'text/javascript';
+//         s.src = 'https://s3-ap-southeast-1.amazonaws.com/qiscus-sdk/public/qismo/qismo-v4.js'; s.async = true;
+//         s.onload = s.onreadystatechange = function() { new Qismo('xheop-u1kttqcvsim2wtl', {
+//                         options: {
+//                             channel_id: 126708,  
+//                             extra_fields: [], 
+//                         }
+//                     }); }
+//         t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+//     });
 </script>
 
 

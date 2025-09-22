@@ -1,0 +1,290 @@
+name: CI — PHP router.php + Node (debug)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  HOST: 127.0.0.1
+  PORT: 8000
+  DOCROOT: .            # router.php & index.php live in repo root; change if needed
+  CI_ENV: testing       # CodeIgniter reads this to set ENVIRONMENT
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_DATABASE: app
+          MYSQL_USER: ci
+          MYSQL_PASSWORD: ci
+          MYSQL_ROOT_PASSWORD: root
+        ports: ["3306:3306"]
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uci -pci || exit 1"
+          --health-interval=5s --health-timeout=5s --health-retries=30
+    env:
+      DB_HOST: 127.0.0.1
+      DB_DATABASE: app
+      DB_USERNAME: ci
+      DB_PASSWORD: ci
+      DB_PORT: 3306
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # --- Node build (optional) ---
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install JS deps
+        run: npm ci || npm install
+
+      # --- PHP setup ---
+      - name: "Set up PHP 8.2 + extensions"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+          extensions: mbstring, intl, curl, pdo, pdo_mysql, mysqli, fileinfo, gd, openssl
+          ini-values: |
+            error_reporting=E_ALL
+            display_errors=1
+            log_errors=1
+            html_errors=0
+            date.timezone=UTC
+            short_open_tag=1
+            error_log=php-error.log
+
+      - name: Wait for MySQL
+        run: |
+          for i in {1..60}; do
+            if mysqladmin ping -h 127.0.0.1 -uci -pci --silent; then exit 0; fi
+            sleep 1
+          done
+          echo "MySQL not ready"; exit 1
+
+      - name: Import schema/data
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -uci -pci app < db/database.sql
+
+      - name: Peek DB contents
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -uci -pci -e "SHOW DATABASES;"
+          mysql -h 127.0.0.1 -P 3306 -uci -pci -D app -e "SHOW TABLES;"
+          # sample row counts for key tables (change names)
+          for t in users posts sessions; do
+            mysql -h 127.0.0.1 -P 3306 -uci -pci -D app -e "SELECT '$t' AS table_name, COUNT(*) AS rows FROM \`$t\` LIMIT 1;" || true
+          done
+
+      # Lint critical entry points early (fast fail with clear message)
+      - name: Lint router and entry
+        run: |
+          php -v
+          php -l router.php
+          # If your front controller is index.php or public/index.php, lint it too:
+          [ -f index.php ] && php -l index.php || true
+          [ -f public/index.php ] && php -l public/index.php || true
+
+      # Drop a temporary health file so we can distinguish server vs app errors
+      - name: Write health probe
+        run: |
+          cat > __health.php <<'PHP'
+          <?php
+          header('Content-Type: application/json');
+          echo json_encode([
+            "ok" => true,
+            "php" => PHP_VERSION,
+            "sapi" => PHP_SAPI,
+            "extensions" => get_loaded_extensions()
+          ]);
+          PHP
+
+      - name: "Add __ls.php"
+        run: |
+          cat > __ls.php <<'PHP'
+          <?php
+          define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+          $root = realpath(__DIR__);
+          $ignoreTop = ['.git','node_modules','vendor','.github','.gitignore','php-server.log','php-error.log'];
+          $out = [];
+          $it = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($root, FilesystemIterator::SKIP_DOTS|FilesystemIterator::FOLLOW_SYMLINKS)
+          );
+          foreach ($it as $f) {
+            $rel = substr($f->getPathname(), strlen($root)+1);
+            $top = explode(DIRECTORY_SEPARATOR, $rel)[0];
+            if (in_array($top, $ignoreTop)) continue;
+            $out[] = ['path'=>$rel,'type'=>$f->isDir()?'dir':'file','size'=>$f->isFile()?$f->getSize():null];
+          }
+          header('Content-Type: application/json');
+          echo json_encode(['root'=>$root,'count'=>count($out),'files'=>$out], JSON_UNESCAPED_SLASHES);
+          PHP
+
+      - name: "Add __routes.php"
+        run: |
+          cat > __routes.php <<'PHP'
+          <?php
+          define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+          $base = __DIR__;
+          $routesFiles = [
+            "$base/application/config/routes.php",
+            "$base/application/config/".ENVIRONMENT."/routes.php",
+          ];
+          $routes = [];
+          foreach ($routesFiles as $file) {
+            if (is_file($file)) {
+              $route = [];
+              include $file;
+              foreach ($route as $k=>$v) { $routes[$k] = $v; }
+            }
+          }
+          // Discover controllers and public methods
+          $controllers = [];
+          $ctrlDir = "$base/application/controllers";
+          if (is_dir($ctrlDir)) {
+            $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($ctrlDir, FilesystemIterator::SKIP_DOTS));
+            foreach ($rii as $file) {
+              if ($file->getExtension() !== 'php') continue;
+              $path = $file->getPathname();
+              $code = @file_get_contents($path);
+              if ($code && preg_match('/class\s+([A-Za-z0-9_]+)\s+extends\s+CI_Controller/i', $code, $m)) {
+                $class = $m[1];
+                require_once $path;
+                if (class_exists($class, false)) {
+                  $ref = new ReflectionClass($class);
+                  $methods = [];
+                  foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $meth) {
+                    if ($meth->class === $class && strpos($meth->name, '_') !== 0) {
+                      $methods[] = $meth->name;
+                    }
+                  }
+                  $rel = substr($path, strlen($ctrlDir)+1);
+                  $controllers[] = ['file'=>$rel,'class'=>$class,'methods'=>$methods];
+                }
+              }
+            }
+          }
+          header('Content-Type: application/json');
+          echo json_encode([
+            'environment' => ENVIRONMENT,
+            'routes'      => $routes,
+            'controllers' => $controllers
+          ], JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+          PHP
+
+
+      # If your router expects to be in its own directory, normalize CWD
+      - name: Start PHP built-in server
+        env:
+          XDEBUG_MODE: off
+          CI_ENV: testing 
+        run: |
+          nohup php -S ${HOST}:${PORT} -t "${DOCROOT}" router.php > php-server.log 2>&1 &
+          sleep 0.5
+          pgrep -fa "php -S" || { echo "PHP server not running"; cat php-server.log || true; exit 1; }
+
+      - name: Wait for server
+        run: |
+          for i in {1..30}; do
+            if curl -s "http://${HOST}:${PORT}/__health.php" >/dev/null 2>&1; then
+              echo "Server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server failed to start."
+          echo "==== php-server.log ====" && (cat php-server.log || true)
+          exit 1
+
+      # Hit the health probe (should be 200)
+      - name: Probe built-in server
+        run: |
+          curl -i "http://${HOST}:${PORT}/__health.php"
+
+      - name: "Probe: __routes.php (first 200 lines)"
+        run: curl -s "http://${HOST}:${PORT}/__routes.php" | sed -n '1,200p'
+
+      - name: "Probe: __ls.php"
+        run: curl -s "http://${HOST}:${PORT}/__ls.php"
+
+      - name: Fetch file list (JSON)
+        run: curl -s "http://${HOST}:${PORT}/__ls.php" -o ls.json
+
+      - name: Quick report
+        run: |
+          python3 - <<'PY'
+          import json
+          d = json.load(open('ls.json'))
+          files = [f for f in d.get('files', []) if f.get('type')=='file']
+          dirs  = [f for f in d.get('files', []) if f.get('type')=='dir']
+          print(f"Total items: {d.get('count', len(d.get('files', [])))}")
+          print(f"Files: {len(files)}  Dirs: {len(dirs)}")
+          print("First 20 files:")
+          for x in files[:20]:
+              print(f"- {x['path']} ({x.get('size',0)} B)")
+          PY
+
+      - name: Upload ls.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: ls-json
+          path: ls.json
+
+      - name: Probe beranda
+        run: |
+          curl -i "http://${HOST}:${PORT}/beranda"
+
+      - name: "Smoke: health"
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/__health.php")
+          echo "HTTP /__health.php => $code"
+          test "$code" = "200"
+
+      - name: "Smoke: /package.json"
+        run: |
+          test -f package.json || { echo "package.json not found at repo root (DOCROOT=${DOCROOT})"; exit 1; }
+              code=$(curl -s -o /tmp/p.json -w "%{http_code}" "http://${HOST}:${PORT}/package.json")
+              echo "HTTP /package.json => $code"
+              if [ "$code" != "200" ]; then
+                echo "Body:"; sed -n '1,50p' /tmp/p.json
+                echo "==== php-server.log ===="; cat php-server.log || true
+                exit 1
+              fi
+
+      # Now hit your real homepage; if this 500s, we’ll print the log
+      - name: "Smoke: homepage"
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" "http://${HOST}:${PORT}/")
+          echo "HTTP / => $code"
+          if [ "$code" != "200" ]; then
+            echo "==== php-server.log ===="
+            cat php-server.log || true
+            exit 1
+          fi
+
+
+      # Cleanup temp file
+      - name: "Cleanup debug endpoints"
+        if: always()
+        run: rm -f __health.php __ls.php __routes.php
+
+      # JS tests, if any
+      - name: Run JS tests (optional)
+        run: npm test --if-present
+
+      # Upload server log on failure for debugging
+      - name: Upload php-server.log (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: php-server-log
+          path: php-server.log

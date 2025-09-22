@@ -2,7 +2,7 @@ name: CI — PHP router.php + Node (debug)
 
 on:
   push:
-    branches: [ main ]
+    # branches: [ development-testing ] comment out for testing
   pull_request:
   workflow_dispatch:
 
@@ -10,7 +10,7 @@ env:
   HOST: 127.0.0.1
   PORT: 8000
   DOCROOT: .            # router.php & index.php live in repo root; change if needed
-  CI_ENV: testing       # CodeIgniter reads this to set ENVIRONMENT
+  CI_ENV: testing
 
 jobs:
   build-and-test:
@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- Node build (optional) ---
+      # --- Node build ---
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:

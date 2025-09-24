@@ -55,15 +55,15 @@
                                         <td class="text-center"><?php echo $no; ?></td>
                                         <td>
                                               <?php if ($d->logo!="") { ?>
-                                                <img src="<?=base_url().'assets/berkas_kegiatan/'.$d->logo;?>" style="width:90px;" alt="<?= 'Logo ' . ($d->singkatan ?? '') ?>" />
+                                                <img src="<?=base_url().'assets/berkas_kegiatan/'.$d->logo;?>" style="width:90px;"  />
                                               <?php } else { ?>
-                                                <img src="<?=base_url().'assets/berkas_kegiatan/itb_default.png';?>" style="width:90px;" alt="<?= 'Logo ' . ($d->singkatan ?? '') ?>" />
+                                                <img src="<?=base_url().'assets/berkas_kegiatan/itb_default.png';?>" style="width:90px;" />
                                               <?php } ?>
                                         </td>
                                         <td><?php echo $d->nama_organisasi;?></td>
                                         <td><?php echo $d->singkatan;?></td>
                                         <td><?php echo $d->visi;?></td>
-                                        <td class="text-justify"><?php echo $d->misi_unit;?></td>
+                                        <td align="justify"><?php echo $d->misi_unit;?></td>
                                          <td><?php if($d->status_aktif==1){ echo "Aktif";} else{echo "Non Aktif";}?></td>
                                     </tr>
                                     <?php } ?>
@@ -91,15 +91,15 @@
                                         <td class="text-center"><?php echo $no; ?></td>
                                         <td>
                                               <?php if ($d->logo!="") { ?>
-                                                <img src="<?=base_url().'assets/berkas_kegiatan/'.$d->logo;?>" style="width:90px;" alt="<?= 'Logo ' . ($d->singkatan ?? '') ?>" />
+                                                <img src="<?=base_url().'assets/berkas_kegiatan/'.$d->logo;?>" style="width:90px;"  />
                                               <?php } else { ?>
-                                                <img src="<?=base_url().'assets/berkas_kegiatan/itb_default.png';?>" style="width:90px;" alt="<?= 'Logo ' . ($d->singkatan ?? '') ?>" />
+                                                <img src="<?=base_url().'assets/berkas_kegiatan/itb_default.png';?>" style="width:90px;" />
                                               <?php } ?>
                                         </td>
                                         <td><?php echo $d->nama_organisasi;?></td>
                                         <td><?php echo $d->singkatan;?></td>
                                         <td><?php echo $d->visi;?></td>
-                                        <td class="text-justify"><?php echo $d->misi_unit;?></td>
+                                        <td align="justify"><?php echo $d->misi_unit;?></td>
                                          <td><?php if($d->status_aktif==1){ echo "Aktif";} else{echo "Non Aktif";}?></td>
                                     </tr>
                                     <?php } ?>
@@ -127,15 +127,15 @@
                                         <td class="text-center"><?php echo $no; ?></td>
                                         <td>
                                               <?php if ($d->logo!="") { ?>
-                                                <img src="<?=base_url().'assets/berkas_kegiatan/'.$d->logo;?>" style="width:90px;" alt="<?= 'Logo ' . ($d->singkatan ?? '') ?>" />
+                                                <img src="<?=base_url().'assets/berkas_kegiatan/'.$d->logo;?>" style="width:90px;"  />
                                               <?php } else { ?>
-                                                <img src="<?=base_url().'assets/berkas_kegiatan/itb_default.png';?>" style="width:90px;" alt="<?= 'Logo ' . ($d->singkatan ?? '') ?>" />
+                                                <img src="<?=base_url().'assets/berkas_kegiatan/itb_default.png';?>" style="width:90px;" />
                                               <?php } ?>
                                         </td>
                                         <td><?php echo $d->nama_organisasi;?></td>
                                         <td><?php echo $d->singkatan;?></td>
                                         <td><?php echo $d->visi;?></td>
-                                        <td class="text-justify"><?php echo $d->misi_unit;?></td>
+                                        <td align="justify"><?php echo $d->misi_unit;?></td>
                                          <td><?php if($d->status_aktif==1){ echo "Aktif";} else{echo "Non Aktif";}?></td>
                                     </tr>
                                     <?php } ?>

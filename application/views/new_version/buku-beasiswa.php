@@ -24,7 +24,7 @@
                                 KKN (Kuliah Kerja Nyata)
                          <?php endif ?>
 
-                          <?php if ($judul == 'enj'): ?>
+                          <?php if ($judul == 'ENJ'): ?>
                                 ENJ
                          <?php endif ?>
                     </h1>
@@ -53,7 +53,7 @@
                           <div class="col-md-2 mb-2">
                         <div class="libro">
                           <span></span>
-                          <a href="<?php echo base_url('assets/buku/booklet-ditmawa'); ?>" target="_blank"><img src="<?php echo base_url('assets/buku/booklet-ditmawa'); ?>/cover.jpg" alt="Booklet Ditmawa" /></a>
+                          <a href="<?php echo base_url('assets/buku/booklet-ditmawa'); ?>" target="_blank"> <img src="<?php echo base_url('assets/buku/booklet-ditmawa'); ?>/cover.jpg" alt="" /> </a>
                         </div>
                         </div>
 
@@ -61,7 +61,7 @@
                         <div class="col-md-2 mb-2">
                         <div class="libro">
                           <span></span>
-                          <a href="<?php echo base_url('assets/buku/beasiswa/2018'); ?>" target="_blank"><img src="<?php echo base_url('assets/buku/beasiswa/2018'); ?>/cover beasiswa 2018.jpg" alt="Beasiswa 2018" /></a>
+                          <a href="<?php echo base_url('assets/buku/beasiswa/2018'); ?>" target="_blank"> <img src="<?php echo base_url('assets/buku/beasiswa/2018'); ?>/cover beasiswa 2018.jpg" alt="" /> </a>
                         </div>
                         </div>
 
@@ -73,38 +73,38 @@
 
                         <div class="col-md-2 mb-2">
                         <div class="libro">
-                            <span></span>
-                            <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2019/2019.pdf'); ?>"><img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2019.jpg" alt="Cerita Inspiratif 2019" /></a>
+                          <span></span>
+                          <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2019/2019.pdf'); ?>"> <img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2019.jpg" alt="" /> </a>
                         </div>
-                    </div>
+                        </div>
 
-                    <div class="col-md-2 mb-2">
+                         <div class="col-md-2 mb-2">
                         <div class="libro">
-                            <span></span>
-                            <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2018/2018.pdf'); ?>"><img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2018.jpg" alt="Cerita Inspiratif 2018" /></a>
+                          <span></span>
+                          <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2018/2018.pdf'); ?>"> <img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2018.jpg" alt="" /> </a>
                         </div>
-                    </div>
+                        </div>
 
-                    <div class="col-md-2 mb-2">
+                         <div class="col-md-2 mb-2">
                         <div class="libro">
-                            <span></span>
-                            <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2017/2017.pdf'); ?>"><img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2017.jpg" alt="Cerita Inspiratif 2017" /></a>
+                          <span></span>
+                          <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2017/2017.pdf'); ?>"> <img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2017.jpg" alt="" /> </a>
                         </div>
-                    </div>
+                        </div>
 
-                    <div class="col-md-2 mb-2">
+                         <div class="col-md-2 mb-2">
                         <div class="libro">
-                            <span></span>
-                            <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2016/2016.pdf'); ?>"><img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2016.jpg" alt="Cerita Inspiratif 2016" /></a>
+                          <span></span>
+                          <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2016/2016.pdf'); ?>"> <img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2016.jpg" alt="" /> </a>
                         </div>
-                    </div>
+                        </div>
 
-                    <div class="col-md-2 mb-2">
+                         <div class="col-md-2 mb-2">
                         <div class="libro">
-                            <span></span>
-                            <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2014/2014.pdf'); ?>"><img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2014.jpg" alt="Cerita Inspiratif 2014" /></a>
+                          <span></span>
+                          <a href="<?php echo base_url('assets/buku/cerita_inspiratif/2014/2014.pdf'); ?>"> <img src="https://kemahasiswaan.itb.ac.id/assets/buku/bidikmisi/cover/CI2014.jpg" alt="" /> </a>
                         </div>
-                    </div>
+                        </div>
 
                         <?php endif ?>
 

@@ -3,8 +3,8 @@
 <!-- Home Banner -->
 <div class="slide-banner--container" style="position:absolute;!important">
 
-    <button id="prevBanner" class="prev-slider" aria-label="Previous banner"><img src="<?= base_url('../assets/new_version') ?>/images/prev-arrow.svg" alt="Previous Banner"></button>
-    <button id="nextBanner" class="next-slider" aria-label="Next banner"><img src="<?= base_url('../assets/new_version') ?>/images/next-arrow.svg" alt="Next Banner"></button>
+    <button id="prevBanner" class="prev-slider"><img src="<?= base_url('../assets/new_version') ?>/images/prev-arrow.svg"></button>
+    <button id="nextBanner" class="next-slider"><img src="<?= base_url('../assets/new_version') ?>/images/next-arrow.svg"></button>
 
     <div id="slideBanner" class="slide-banner" style="position:absolute;!important">
 
@@ -19,7 +19,7 @@
             <?php if($hl->id_kategori_cms != 1 && $hl->id_kategori_cms != 2){ ?>
                 <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul_eng))); ?>">
                  <div class="slide-banner--item" style="background-image:url('../assets/cms/uploads/berita/<?= $hl->img ?>');">
-                    <div class="slide-banner--title" style="background-color: grey; padding: 5px; border-radius: 10px;"><b> <?= $hl->judul_eng ?></b></div>
+                    <div class="slide-banner--title" style="background-color: grey; padding: 5px;opacity: 0.9; border-radius: 10px;"><b> <?= $hl->judul_eng ?></b></div>
                  </div>
                 </a>
 
@@ -27,7 +27,7 @@
 
                 <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul_eng))); ?>">
                  <div class="slide-banner--item" style="background-image:url('../assets/cms/uploads/berita/<?= $hl->img ?>');">
-                    <div class="slide-banner--title" style="background-color: grey;padding: 5px; border-radius: 10px;"><b><?= $hl->judul_eng ?></b></div>
+                    <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= $hl->judul_eng ?></b></div>
                  </div>
                 </a>
 
@@ -35,7 +35,7 @@
 
                 <a href="<?= base_url('blog/cerita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul_eng))); ?>">
                  <div class="slide-banner--item" style="background-image:url('../assets/cms/uploads/berita/<?= $hl->img ?>');">
-                    <div class="slide-banner--title" style="background-color: grey;padding: 5px; border-radius: 10px;"><b><?= $hl->judul_eng ?></b></div>
+                    <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= $hl->judul_eng ?></b></div>
                  </div>
                 </a>
 
@@ -51,7 +51,7 @@
             <?php if($hl->id_kategori_cms != 1 && $hl->id_kategori_cms != 2){ ?>
                 <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>">
                  <div class="slide-banner--item" style="background-image:url('../assets/cms/uploads/berita/<?= $hl->img ?>');">
-                    <div class="slide-banner--title" style="background-color: grey; padding: 5px; border-radius: 10px;"><b> <?= $hl->judul ?></b></div>
+                    <div class="slide-banner--title" style="background-color: grey; padding: 5px;opacity: 0.9; border-radius: 10px;"><b> <?= $hl->judul ?></b></div>
                  </div>
                 </a>
 
@@ -59,7 +59,7 @@
 
                 <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>">
                  <div class="slide-banner--item" style="background-image:url('../assets/cms/uploads/berita/<?= $hl->img ?>');">
-                    <div class="slide-banner--title" style="background-color: grey;padding: 5px; border-radius: 10px;"><b><?= $hl->judul ?></b></div>
+                    <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= $hl->judul ?></b></div>
                  </div>
                 </a>
 
@@ -67,7 +67,7 @@
 
                 <a href="<?= base_url('blog/cerita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>">
                  <div class="slide-banner--item" style="background-image:url('../assets/cms/uploads/berita/<?= $hl->img ?>');">
-                    <div class="slide-banner--title" style="background-color: grey;padding: 5px; border-radius: 10px;"><b><?= $hl->judul ?></b></div>
+                    <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= $hl->judul ?></b></div>
                  </div>
                 </a>
 
@@ -174,9 +174,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <div class="p-3">
-                    <div class="font-weight-bold text-sm">➤ Punya UKM yang baru digarap? 
-                        <a href="#" class="link-blue">Ajukan UKM kamu disini</a>
-                    </div>
+                    <div class="font-weight-bold text-sm">➤ Punya UKM yang baru digarap? <a href="#" class="link-blue">Ajukan UKM kamu disini</a></div>
                 </div>
             </div>
         </div>

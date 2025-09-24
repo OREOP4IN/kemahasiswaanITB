@@ -16,7 +16,7 @@
                     <div class="d-block">
                         <h3 class="mb-4"><?= $this->lang->line('utama:daftarkegiatan'); ?></h3>
                         <div class="d-block" id="media-list">
-                           <!-- NOTES: its empty -->
+                           
                         </div>
                         <br>
                        

@@ -13,42 +13,8 @@
                     }
     }
 
-    .slideditmawa {
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Filter only on the background image via pseudo-element */
-    .slideditmawa::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: inherit;
-        background-size: cover;
-        background-position: center;
+    .slideditmawa{
         filter: sepia(100%) hue-rotate(160deg) saturate(300%);
-        z-index: 0;
-        pointer-events: none; /* prevent pseudo-element from interfering */
-    }
-
-    .slide-banner--container, .slide-banner {
-        width: 100%;
-        height: auto; /* or a fixed height */
-        overflow: hidden; /* prevent internal scroll */
-    }
-
-    /* Title stays above the filtered background */
-    .slide-banner--title {
-        position: relative;
-        z-index: 1;
-        background-color: #0F77D2;
-        padding: 5px 15px;
-        border-radius: 10px;
-        display: inline-block;
-        color: #fff; /* optional, make text visible */
     }
 
 
@@ -57,8 +23,8 @@
 <!-- Home Banner -->
 <div class="slide-banner--container">
 
-    <button id="prevBanner" class="prev-slider" aria-label="Previous banner" title="Previous Banner" data-toggle="tooltip" data-placement="top"><img src="<?= ARROW_SLIDER ?>/images/prev-arrow.svg" alt="Previous Banner"></button>
-    <button id="nextBanner" class="next-slider" aria-label="Next banner" title="Next Banner" data-toggle="tooltip" data-placement="top"><img src="<?= ARROW_SLIDER ?>/images/next-arrow.svg" alt="Next Banner"></button>
+    <button id="prevBanner" class="prev-slider"><img src="<?= ARROW_SLIDER ?>/images/prev-arrow.svg"></button>
+    <button id="nextBanner" class="next-slider"><img src="<?= ARROW_SLIDER ?>/images/next-arrow.svg"></button>
 
     <div id="slideBanner" class="slide-banner">
         
@@ -71,17 +37,17 @@
 
                 <?php if($hl->id_kategori_cms == 0 && $hl->judul_eng != ''){ ?>
 
-                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul ?>">
+                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title"><b> <?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
+                        <div class="slide-banner--title" style="background-color: grey; padding: 5px;opacity: 0.9; border-radius: 10px;"><b> <?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
                      </div>
                     </a>
 
                 <?php }else if($hl->id_kategori_cms != 0){ ?>
 
-                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul ?>">
+                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul) ))); ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title"><b><?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
+                        <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= (isset($hl->judul_eng) ?$hl->judul_eng:$hl->judul)  ?></b></div>
                      </div>
                     </a>
                     
@@ -95,17 +61,17 @@
 
                 <?php if($hl->id_kategori_cms == 0){ ?>
 
-                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= $hl->judul ?>">
+                    <a href="<?= base_url('beranda/read/berita/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title"><b><?= $hl->judul ?></b></div>
+                        <div class="slide-banner--title" style="background-color: grey; padding: 5px;opacity: 0.9; border-radius: 10px;"><b> <?= $hl->judul ?></b></div>
                      </div>
                     </a>
 
                 <?php }else if($hl->id_kategori_cms != 0){ ?>
 
-                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>" data-toggle="tooltip" data-placement="top" alt="<?= $hl->judul ?>">
+                    <a href="<?= base_url('beranda/read/pengumuman/'.$hl->id_cms.'/'.strtolower(str_replace($replace, "-", $hl->judul))); ?>">
                      <div class="slide-banner--item slideditmawa" style="background-image:url('<?= PATH_FOTO_CMS.$hl->img ?>');">
-                        <div class="slide-banner--title"><b><?= $hl->judul ?></b></div>
+                        <div class="slide-banner--title" style="background-color: grey;padding: 5px;opacity: 0.9;border-radius: 10px;"><b><?= $hl->judul ?></b></div>
                      </div>
                     </a>
                     
@@ -139,30 +105,34 @@
                 <div><?= $this->lang->line('utama:karir'); ?></div>
             </div>
         </a> -->
-            <div class="menu-social-media justify-content-center" style="width:100%;">
-                <a style="width:14.2%" href="https://www.instagram.com/ditmawa.itb/" target="_blank" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Instagram">
-                    <div class="inner"><img  src="<?= base_url('assets/new_version') ?>/images/icon-social-instagram.svg" alt="Instagram"></div>
-                </a>
-                <a style="width:14.2%" href="https://wa.me/628112111446" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="WhatsApp">
-                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-whatsapp.svg" alt="Whatsapp"></div>
-                </a>
-                <a style="width:14.2%" href="https://twitter.com/ditmawa_itb" target="_blank" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Twitter">
-                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-twitter.svg" alt="Twitter"></div>
-                </a>
-                <a style="width:14.2%" href="https://line.me/R/ti/p/%40ditmawa_itb" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Line Chat">
-                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-line.svg" alt="Line"></div>
-                </a>
-                <a style="width:14.2%" href="https://www.tiktok.com/@kemahasiswaanitb?" target="_blank" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="TikTok">
-                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-tiktok.svg" alt="TikTok"></div>
-                </a>
-                <a style="width:14.2%" href="https://www.youtube.com/c/direktoratkemahasiswaanitb" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Youtube">
-                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-youtube.svg" alt="Youtube"></div>
-                </a>
-                <a style="width:14.2%" href="https://www.facebook.com/ditmawaITB" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Youtube">
-                    <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-facebook.svg" alt="Facebook"></div>
-                </a>
+        <div class="menu-social-media justify-content-center" style="width:100%;">
+                   
+                    <a style="width:14.2%" href="https://www.instagram.com/ditmawa.itb/" target="_blank" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Instagram">
+                        <div class="inner"><img  src="<?= base_url('assets/new_version') ?>/images/icon-social-instagram.svg"></div>
+                    </a>
+                     <a style="width:14.2%" href="https://wa.me/628112111446" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="WhatsApp">
+                        <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-whatsapp.svg"></div>
+                    </a>
+                    <a style="width:14.2%" href="https://twitter.com/ditmawa_itb" target="_blank" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Twitter">
+                        <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-twitter.svg"></div>
+                    </a>
+                    
+                     <a style="width:14.2%" href="https://line.me/R/ti/p/%40ditmawa_itb" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Line Chat">
+                        <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-line.svg"></div>
+                    </a>
+                     <a style="width:14.2%" href="https://www.tiktok.com/@kemahasiswaanitb?" target="_blank" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Tik Tok">
+                        <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-tiktok.svg"></div>
+                    </a>
+                    <a style="width:14.2%" href="https://www.youtube.com/c/direktoratkemahasiswaanitb" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Youtube">
+                        <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-youtube.svg"></div>
+                    </a>
+
+                     <a style="width:14.2%" href="https://www.facebook.com/ditmawaITB" class="menu-social-media--item" data-toggle="tooltip" data-placement="top" title="Youtube">
+                        <div class="inner"><img src="<?= base_url('assets/new_version') ?>/images/icon-social-facebook.svg"></div>
+                    </a>
+                   
+                </div>
             </div>
-        </div>
     </div>
 </div>
 
@@ -173,37 +143,37 @@
             <div class="col-lg-12 col-md-12 pr-md-0">
                 <!-- Menu Lists -->
                 <div class="menu-lists">
-                     <a href="https://karir.itb.ac.id" class="menu-lists--item addonss"> 
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-karir2.svg" alt="Icon Karir ITB"></div>
+                     <a href="https://karir.itb.ac.id" class="menu-lists--item addonss">
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-karir2.svg"></div>
                         <div class="menu-lists--text"><?= $this->lang->line('utama:karir'); ?></div>
                     </a>
-                    <a href="<?= base_url(); ?>bk" class="menu-lists--item addonss">
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-konseling2.svg" alt="Icon Konseling"></div>
+                     <a href="<?= base_url(); ?>bk" class="menu-lists--item addonss">
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-konseling2.svg"></div>
                         <div class="menu-lists--text"><?= $this->lang->line('utama:konseling'); ?></div>
                     </a>
-                    <a href="<?= base_url(); ?>beasiswa" class="menu-lists--item addonss">
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-beasiswa2.svg" alt="Icon Beasiswa"></div>
+                     <a href="<?= base_url(); ?>beasiswa" class="menu-lists--item addonss">
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-beasiswa2.svg"></div>
                         <div class="menu-lists--text"><?= $this->lang->line('utama:beasiswa'); ?></div>
                     </a>
                     <a href="<?= base_url('beranda/ormawa') ?>" class="menu-lists--item addonss">
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-organisasi.svg" alt="Icon Organisasi Mahasiswa"></div>
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-organisasi.svg"></div>
                         <div class="menu-lists--text"><?= $this->lang->line('utama:organisasi'); ?></div>
                     </a>
                     <a href="https://kkn.itb.ac.id" class="menu-lists--item addonss">
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-pengabdian.svg" alt="Icon Pengabdian Masyarakat"></div>
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-pengabdian.svg"></div>
                         <div class="menu-lists--text"><?= $this->lang->line('utama:pengabdian'); ?></div>
                     </a>
                     <a href="<?= base_url('beranda/prestasi') ?>" class="menu-lists--item addonss">
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-prestasi.svg" alt="Icon Prestasi">
-                        </div>
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-prestasi.svg"></div>
                         <div class="menu-lists--text"><?= $this->lang->line('utama:prestasi'); ?></div>
                     </a>
                     <a href="<?= base_url('beranda/kegiatan') ?>" class="menu-lists--item addonss">
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-kegiatan.svg" alt="Icon Kegiatan"></div>
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-kegiatan.svg"></div>
                         <div class="menu-lists--text"><?= $this->lang->line('utama:kegiatan'); ?></div>
                     </a>
+                   
                     <a href="https://tracer.itb.ac.id/" class="menu-lists--item addonss">
-                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-tracer.svg" alt="Icon Tracer Study"></div>
+                        <div class="menu-lists--icon"><img src="<?= base_url('assets/new_version') ?>/images/icon-tracer.svg"></div>
                         <div class="menu-lists--text">Tracer Study</div>
                     </a>
                 </div>

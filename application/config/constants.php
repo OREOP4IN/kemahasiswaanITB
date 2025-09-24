@@ -27,12 +27,10 @@ define('APPPATH_URI',BASE_URI.APPPATH);
 // We dont need these variables any more
 unset($base_uri, $base_url);
 
-// NOTES: changed source from raw link (https://kemahasiswaan.itb.ac.id) to base url
-
-define('PATH_FOTO_CMS', BASE_URL .'/assets/cms/uploads/berita/');
-define('ARROW_SLIDER', BASE_URL . '/assets/new_version');
-define('PIC_MHS', BASE_URL . '/assets/upload/');
-define('DEV_PIC_MHS', BASE_URL . '/assets/img/default_icon.png');
+define('PATH_FOTO_CMS','https://kemahasiswaan.itb.ac.id/assets/cms/uploads/berita/');
+define('ARROW_SLIDER','https://kemahasiswaan.itb.ac.id/assets/new_version');
+define('PIC_MHS','https://kemahasiswaan.itb.ac.id/assets/upload/');
+define('DEV_PIC_MHS','https://kemahasiswaan.itb.ac.id/assets/img/default_icon.png');
 
 
 /*

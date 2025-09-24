@@ -19,7 +19,7 @@
 
   <title>Direktorat Kemahasiswaan</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta charset="utf-8">
   <meta name="author" content="Tim Media Direktorat Kemahasiswaan ITB">
   <meta name="title" content="Direktorat Kemahasiswaan ITB">

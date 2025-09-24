@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <div class="d-block px-lg-2">
                             <h5 class="text-regular" style="text-align: justify;">
-                                 <div class="text-center">Tugas & Fungsi Direktorat Kemahasiswaan </div>
+                                 <center>Tugas & Fungsi Direktorat Kemahasiswaan </center>
                             </h5>
                         </div>
                     </div>

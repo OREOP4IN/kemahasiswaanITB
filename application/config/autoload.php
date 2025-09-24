@@ -60,10 +60,7 @@ $autoload['packages'] = array();
 */
 //$autoload['libraries'] = array('session', 'Nusoap_lib','InitVsword','database','upload','parser','form_validation','pagination','Cas');
 
-$autoload['libraries'] = array('session','upload','parser','form_validation','pagination','Cas');
-if (ENVIRONMENT !== 'testing') {
-    $autoload['libraries'][] = 'database';
-}
+$autoload['libraries'] = array('session','database','upload','parser','form_validation','pagination','Cas');
 
 /*
 | -------------------------------------------------------------------
